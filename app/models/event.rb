@@ -1,3 +1,5 @@
+CATEGORIES = ["Poverty", "Women & Families", "Refugees", "Children", "Animals", "Environment", "Elderly", "Education"]
+
 class Event < ApplicationRecord
   belongs_to :user
   has_many :requests
