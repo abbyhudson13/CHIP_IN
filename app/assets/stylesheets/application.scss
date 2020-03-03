@@ -14,7 +14,7 @@
 @import "components/footer";
 
 
-body {
+html, body {
   height: 100%;
   margin: 0;
 }
@@ -22,4 +22,5 @@ body {
   // padding: 20px;
   min-height: 100%;
   margin: 0 auto -100px;
+  // min-height: calc(100% - 100px) SAME AS line 23 + line 24;
 }
