@@ -10,6 +10,7 @@ class RequestsController < ApplicationController
     @request.event = @event
     @request.user = current_user
     @request.status = 1
+    #this is for the moment hardcoded. We need to implement the if statement. TO DO
     if @request.save
        redirect_to root_path
        # need to be change when dashboard is available
