@@ -16,7 +16,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user = current_user
       if @event.save
-        redirect to event_path(@event)
+        redirect_to event_path(@event)
       else
         render :new
       end
@@ -27,7 +27,7 @@ class EventsController < ApplicationController
 
   def update
     @event.update(event_params)
-    redirect to event_path(@event)
+    redirect_to event_path(@event)
   end
 
   def destroy
