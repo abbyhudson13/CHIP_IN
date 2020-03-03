@@ -1,8 +1,17 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+
   def index
-    @events = Event.all
+    if params[:search].present?
+      sql = "name ILIKE :query
+      OR category ILIKE :query
+      OR address ILIKE :query
+      "
+      @events = Event.where(sql, query: "%#{params[:search][:query]}%")
+    else
+      @event = Event.all
+    end
   end
 
   def show

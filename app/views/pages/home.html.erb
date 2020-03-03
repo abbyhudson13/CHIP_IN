@@ -1,2 +1,10 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+
+<%= simple_form_for :search, method: :get, url: events_path do |f|%>
+  <%= f.input :query, label: false, placeholder: "Search" %>
+  <%= f.submit "Submit", as: :hidden, class: "d-none" %>
+<% end %>
+<!-- #the bootstrap class d-none is here used to hide the submit button and submit by hitting enter.
+ -->
