@@ -1,8 +1,17 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+
   def index
-    @event = Event.all
+    if params[:search].present?
+      sql = "name ILIKE :query
+      OR category ILIKE :query
+      OR address ILIKE :query
+      "
+      @events = Event.where(sql, query: "%#{params[:search][:query]}%")
+    else
+      @event = Event.all
+    end
   end
 
   def show
@@ -16,7 +25,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user = current_user
       if @event.save
-        redirect to event_path(@event)
+        redirect_to event_path(@event)
       else
         render :new
       end
@@ -27,7 +36,7 @@ class EventsController < ApplicationController
 
   def update
     @event.update(event_params)
-    redirect to event_path(@event)
+    redirect_to event_path(@event)
   end
 
   def destroy
@@ -39,7 +48,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:name, :address, :description, :category, :starts_at, :ends_at, :capacity)
+    params.require(:event).permit(:name, :address, :description, :category, :starts_at, :ends_at, :capacity, :photo)
   end
 
   def set_event

@@ -5,6 +5,7 @@
 <%= f.input :address %>
 <%= f.input :starts_at, order: [:day, :month, :year] %>
 <%= f.input :ends_at, order: [:day, :month, :year] %>
+<%= f.input :photo, as: :file %>
 <%= f.input :capacity %>
-<%= f.submit "Add event", class: "btn btn-primary" %>
+<%= f.submit "Submit", class: "btn btn-primary" %>
 <% end %>
