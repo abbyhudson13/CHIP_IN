@@ -36,6 +36,7 @@ class RequestsController < ApplicationController
     @request = Request.find(params[:id])
     @request.destroy
     redirect_to root_path
+
     # need to be change when dashboard is available
 
   end
