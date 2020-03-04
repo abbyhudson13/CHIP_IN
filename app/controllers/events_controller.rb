@@ -13,13 +13,16 @@ class EventsController < ApplicationController
       "
       @events = Event.where(sql, query: "%#{params[:search][:query]}%").geocoded
     end
+
     @markers = @events.map do |event|
+      if event.starts_at > Date.today
       {
         lat: event.latitude,
         lng: event.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { event: event }),
         image_url: helpers.asset_url('world.png')
       }
+      end
     end
   end
 
@@ -64,6 +67,11 @@ class EventsController < ApplicationController
     redirect_to events_path
   end
 
+  # def filter
+  #     @future_events = @events.select do |event|
+  #     event.starts_at > Date.today
+  #   end
+  # end
 
   private
 

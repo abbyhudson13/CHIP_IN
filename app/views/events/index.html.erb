@@ -1,13 +1,15 @@
 <div>
   <% if @events %>
     <p><% @events.each do |event| %>
-      <h2><%= link_to(event.name, event_path(event)) %></h2>
-      <h4><%= event.user.username %></h4>
-      <h5><%= event.description %></h5>
-      <h5>Starts at: <%= event.starts_at_formatted %></h5>
-      <h5>Ends at: <%= event.ends_at_formatted %></h5>
-      <p><%= cl_image_tag event.photo.key %></p>
+      <% if event.starts_at > Date.today %>
+          <h2><%= link_to(event.name, event_path(event)) %></h2>
+          <h4><%= event.user.username %></h4>
+          <h5><%= event.description %></h5>
+          <h5>Starts at: <%= event.starts_at_formatted %></h5>
+          <h5>Ends at: <%= event.ends_at_formatted %></h5>
+          <p><%= cl_image_tag event.photo.key %></p>
       <% end %>
+    <% end %>
     </p>
   <% end %>
 
