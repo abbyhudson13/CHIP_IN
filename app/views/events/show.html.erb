@@ -1,1 +1,17 @@
-<p><%= @event.name %></p>
+<div>
+  <div>
+    <h1><%= @event.name %></h1>
+    <h2><%= @event.address %></h2>
+  </div>
+  <div>
+    <div>
+      <%= cl_image_tag @event.photo.key, width: "300px" %>
+    </div>
+    <div>
+      <p><strong>From</strong> <%= @event.starts_at_formatted %> <strong>to</strong> <%= @event.ends_at_formatted %></p>
+      <p><%= @event.capacity %></p>
+      <p><%= @event.description %></p>
+      <%= link_to "Request participation", new_event_request_path(@event), class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>

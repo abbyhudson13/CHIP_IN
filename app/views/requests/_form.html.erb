@@ -1,4 +1,4 @@
-<%= simple_form_for @request do |f| %>
+<%= simple_form_for [@event, @request] do |f| %>
   <%= f.input :message %>
-  <%= f.submit class: "btn btn-primary" %>
-<%= end %>
+  <%= f.submit 'Submit', class: "btn btn-primary" %>
+<% end %>
