@@ -1,6 +1,3 @@
-STATUS = ['1', '2', '3','4']
-validates_
-
 class Request < ApplicationRecord
   validates :status, inclusion: {in: [1,2,3,4]}
   belongs_to :user
