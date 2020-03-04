@@ -7,6 +7,7 @@ class EventsController < ApplicationController
       sql = "name ILIKE :query
       OR category ILIKE :query
       OR address ILIKE :query
+      OR description ILIKE :query
       "
       @events = Event.where(sql, query: "%#{params[:search][:query]}%")
     else
