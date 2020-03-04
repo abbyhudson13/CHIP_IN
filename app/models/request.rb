@@ -1,9 +1,6 @@
-STATUS = ['1', '2', '3','4']
-
 class Request < ApplicationRecord
-  validates :status, inclusion: {in: [1,2,3,4]}
+  enum status: [:pending, :confirmed, :declined, :cancelled ]
+  # validates :status, inclusion: {in: [0,1,2,3]}
   belongs_to :user
   belongs_to :event
-
-
 end

@@ -9,9 +9,8 @@ class RequestsController < ApplicationController
     @request = Request.new(request_params)
     @request.event = @event
     @request.user = current_user
-    @request.status = 1
-    #this is for the moment hardcoded. We need to implement the if statement. TO DO
-    if @request.save
+    @request.status = 0
+    if @request.save!
        redirect_to confirmation_request_path(@request)
      else
       render :new
