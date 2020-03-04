@@ -1,6 +1,6 @@
 <%= simple_form_for [@event] do |f| %>
 <%= f.input :name %>
-<%= f.input :category, collection: CATEGORIES %>
+<%= f.input :category, collection: Event::CATEGORIES %>
 <%= f.input :description %>
 <%= f.input :address %>
 <%= f.input :starts_at, order: [:day, :month, :year] %>
