@@ -11,12 +11,14 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "components/card";
 @import "components/footer";
 
-body, html {
-  height: 100%;
-  margin: 0;
+html, body {
+    height: 100%;
+    margin: 0;
 }
+
 .content {
   // padding: 20px;
   min-height: 100%;

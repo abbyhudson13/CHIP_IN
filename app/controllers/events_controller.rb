@@ -10,7 +10,7 @@ class EventsController < ApplicationController
       "
       @events = Event.where(sql, query: "%#{params[:search][:query]}%")
     else
-      @event = Event.all
+      @events = Event.all
     end
   end
 
