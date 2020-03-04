@@ -1,8 +1,12 @@
-.show-content-one{
+.content-show{
     // text-align: center;
     // display: flex;
     // align-items: center;
-    width: 100%;
-    height:100%;
-    background-color: red;
+    // width: 100%;
+    min-height: 300px;
+    margin-bottom: 50px;
+}
+
+#show-page-content{
+    margin-bottom: 50px;
 }
