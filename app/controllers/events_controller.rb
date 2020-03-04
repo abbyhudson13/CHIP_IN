@@ -7,6 +7,7 @@ class EventsController < ApplicationController
       sql = "name ILIKE :query
       OR category ILIKE :query
       OR address ILIKE :query
+      OR description ILIKE :query
       "
       @events = Event.where(sql, query: "%#{params[:search][:query]}%")
     else
@@ -36,7 +37,11 @@ class EventsController < ApplicationController
 
   def update
     @event.update(event_params)
-    redirect_to event_path(@event)
+    if @event.save
+     redirect_to event_path(@event)
+    else
+      render :edit
+    end
   end
 
   def destroy

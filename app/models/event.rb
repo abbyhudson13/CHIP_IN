@@ -4,6 +4,7 @@ class Event < ApplicationRecord
   has_many :requests
   has_many :users, through: :requests
   has_one_attached :photo
+  validates :photo, attached: true
 
   def starts_at_formatted
     starts_at.strftime('%A, %d %b %Y %l:%M %p')
