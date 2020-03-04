@@ -24,6 +24,13 @@ class EventsController < ApplicationController
   end
 
   def show
+    event = Event.geocoded
+    @markers = [{
+        lat: @event.latitude,
+        lng: @event.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { event: @event }),
+        image_url: helpers.asset_url('world.png')
+      }]
   end
 
   def new
