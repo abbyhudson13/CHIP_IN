@@ -11,15 +11,20 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+// @import "pages/show";
 @import "components/card";
 @import "components/footer";
 
 html, body {
-    height: 100%;
-    margin: 0;
+  height: 100%;
+  margin: 0;
 }
 
 .content {
   min-height: 100%;
-  margin: 0 auto -100px;
+  margin-bottom: -100px;
+}
+
+.push {
+  height: 100px;
 }
