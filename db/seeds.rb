@@ -269,25 +269,25 @@ stepsforpeace.photo.attach(io:file14, filename: 'logo14.jpg', content_type: 'ima
 #####################################
 
 
-require "open-uri"
+# require "open-uri"
 
 User.destroy_all
 
 # volunteer 1
-file = URI.open('https://res.cloudinary.com/dqlvehu5z/image/upload/v1583402819/CHIP-IN/Volunteers/Luis_t3um21.jpg')
+# file = URI.open('https://res.cloudinary.com/dqlvehu5z/image/upload/v1583402819/CHIP-IN/Volunteers/Luis_t3um21.jpg')
 
- luisito = User.create(
-  username:"topdesigner",
-  password: "123456",
-  email:"luisitotopdesigner@lewagon.com",
-  address: "Brandenburgische Straße 18 13189 Berlin",
-  bio:"Spanish Graphic designer / illustrator / font designer want to become a web developer. Ten years in Germany, last two of them in Berlin Schöneberg.",
-  full_name: "Luis Caballero",
-  role: "Volunteer",
-  webpage: "http://www.luisitotopprogrammer.com"
-)
+#  luisito = User.create(
+#   username:"topdesigner",
+#   password: "123456",
+#   email:"luisitotopdesigner@lewagon.com",
+#   address: "Brandenburgische Straße 18 13189 Berlin",
+#   bio:"Spanish Graphic designer / illustrator / font designer want to become a web developer. Ten years in Germany, last two of them in Berlin Schöneberg.",
+#   full_name: "Luis Caballero",
+#   role: "Volunteer",
+#   webpage: "http://www.luisitotopprogrammer.com"
+# )
 
-luisito.photo.attach(io:file, filename:'logo.jpg', content_type: 'image/jpg')
+# luisito.photo.attach(io:file, filename:'avatar.jpg', content_type: 'image/jpg')
 
 
 # volunteer 2
@@ -307,20 +307,20 @@ file1 = URI.open('https://res.cloudinary.com/dqlvehu5z/image/upload/v1583334950/
 daniel.photo.attach(io:file1, filename:'logo1.png', content_type: 'image/png')
 
 # volunteer 3
-file2 = URI.open('https://res.cloudinary.com/dqlvehu5z/image/upload/v1583402586/CHIP-IN/Volunteers/jean_pfvfdm.jpg')
+# file2 = URI.open('https://res.cloudinary.com/dqlvehu5z/image/upload/v1583402586/CHIP-IN/Volunteers/jean_pfvfdm.jpg')
 
- jean = User.create(
-  username: "bestdj",
-  password: "123456",
-  email: "bestdjberlin@lewagon.com",
-  address: "Leopoldstraße 66 13503 Berlin",
-  bio: "Producer of electronic music and tech enthusiast, I use to work in webmarketing. i'm interested in helping others",
-  full_name: "Jean Kabuiku",
-  role: "Volunteer",
-  webpage: "http://www.bestdjinberlin.com"
-)
+#  jean = User.create(
+#   username: "bestdj",
+#   password: "123456",
+#   email: "bestdjberlin@lewagon.com",
+#   address: "Leopoldstraße 66 13503 Berlin",
+#   bio: "Producer of electronic music and tech enthusiast, I use to work in webmarketing. i'm interested in helping others",
+#   full_name: "Jean Kabuiku",
+#   role: "Volunteer",
+#   webpage: "http://www.bestdjinberlin.com"
+# )
 
-jean.photo.attach(io:file2, filename:'logo2.jpg', content_type: 'image/jpg')
+# jean.photo.attach(io:file2, filename:'logo2.jpg', content_type: 'image/jpg')
 
 #volunteer 4
 
