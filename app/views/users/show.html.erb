@@ -1,1 +1,10 @@
-<p>user show page</p>
+
+<h1><%= @user.username %></h1>
+<h6><%= @user.full_name %></h6>
+<p><%= @user.bio %></p>
+<p><%= cl_image_tag @user.photo.key %></p>
+<p>Events hosted by <%= @user.username %>:</p>
+<p><%= link_to "Go to #{@user.username}'s Website", @user.webpage , target: "_blank", rel: "nofollow"  %></p>
+<p><%= mail_to @user.email, "Email #{@user.username}" %></p>
+
+
