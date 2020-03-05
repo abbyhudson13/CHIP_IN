@@ -20,6 +20,7 @@ youngcaritas = User.create(
   address: "Residenzstraße 90 13409 Berlin",
   bio:"Youngcaritas Berlin is part of the Caritas Association for the Archdiocese of Berlin and promotes young commitment. Our aim is to introduce young people to politically and socially controversial issues and to make them more aware of environmental resources through both theoretical input and practical implementation. The aim of youngcaritas Berlin is to attract as many young people as possible to volunteer, be it for the youngcaritas projects Kulturbuddys, vergissmeinnicht* or through advice and placement in various institutions and projects.",
   full_name: "Adele Weber",
+  role: "Charity",
   webpage: "http://www.youngcaritas.de/lokalisiert/berlin"
 )
 
@@ -38,6 +39,7 @@ servethecitiy = User.create(
   address: "Greifenhagener Str. 60 10437 Berlin",
   bio:"STC Berlin e. V. mobilizes volunteers to show an act of kindness in a practical way. In practical terms, we do this by painting walls, serving food, visiting people, playing games, making music, organizing sports festivals, through art and creativity, collecting garbage and much more. We serve children, youth and adults, older people, people with disabilities, homeless people and other people who are on the margins of society or in need of help.",
   full_name: "Erika Hoffmann",
+  role: "Charity",
   webpage: "https://www.servethecity.berlin/en/"
 )
 
@@ -55,6 +57,7 @@ berlinerobdachlosen = User.create(
   address: "Lynarstraße 38 13353 Berlin",
   bio:"Berliner Obdachlosenhilfe is a non-profit organisation run by volunteers that help people who lost their homes and live on the street.",
   full_name: "Heiner Schulz",
+  role: "Charity",
   webpage: "https://www.berliner-obdachlosenhilfe.de/"
 )
 
@@ -72,6 +75,7 @@ familienzentrum = User.create(
   address: "Adalbertstr. 23b 10997 Berlin",
   bio:"Jugendwohnen im Kiez offers help from a single source in the youth and social sector. Specifically, we develop and implement offers in the fields of work: child and youth welfare, cooperation youth welfare school, education networks, family centres, day care centres and district management.",
   full_name: "Freddie Krüger",
+  role: "Charity",
   webpage: "http://familienzentrum-adalbertstrasse.de/"
 )
 familienzentrum.photo.attach(io:file3, filename:'logo3.png', content_type: 'image/png')
@@ -87,6 +91,7 @@ junkfood = User.create(
   address: "Bezirk Mitte, 13359 Berlin",
   bio:"We want to help to reduce food waste by turning surplus fruit and veg into delicious delicatessen and healthy meals that are provided to the public and other social projects and events (usually connected with sustainability and/or social issues). We bring people together and share the joy of cooking and eating together while serving a great cause of preventing food waste.",
   full_name: "Heidy Lange",
+  role: "Charity",
   webpage: "https://www.facebook.com/TRJFPBerlin"
 )
 
@@ -102,6 +107,7 @@ verbundtreptow = User.create(
   address: "Kiefholzstr. 414 12435 Berlin",
   bio:"We offer assisted living for mentally ill and mentally handycapped people. Also, we have an employment project in our Café Grenzenlos for people being excluded from work at the job market due to their handicaps.",
   full_name: "Walter Fuchs",
+  role: "Charity",
   webpage: "https://www.psv-treptow.de/"
 )
 
@@ -118,6 +124,7 @@ speak = User.create(
   address: "Schillingstraße 12 10179 Berlin",
   bio:"SPEAK is a social startup that connects migrants, refugees and locals living in the same city. This happens through informal and dynamic language groups  and events that are open to everyone in the community! Anyone can register to be a buddy to help others learn a language and share their culture while meeting incredible people.",
   full_name: "Ramona Keller",
+  role: "Charity",
   webpage: "https://www.speak.social/de/"
 )
 
@@ -134,6 +141,7 @@ dwb = User.create(
   address: "Zeughofstraße 12 10997 Berlin",
   bio:"The refugee shelter is located in a quite back street in the heart of Berlin Kreuzberg. Up to 147 women, men and children from all over the world live here. Most of them are war refugees or asylum seekers who can not return to their home countries for various reasons. We offer social counselling and support regarding administrative and bureaucratic matters and help to find German classes. ",
   full_name: "Sigfrido Vogel",
+  role: "Charity",
   webpage: "https://www.diakonie-stadtmitte.de/integration-migration/fluechtlingswohnheim-zeughofstrasse/ueber-das-wohnheim/"
 )
 
@@ -141,7 +149,7 @@ dwb.photo.attach(io:file7, filename:'logo7.png', content_type: 'image/png')
 
 #charity 9
 
-file8 = URI.open('https://res.cloudinary.com/dqlvehu5z/image/upload/v1583321091/CHIP-IN/Charities%20pics/Berliner_Stadtmission_chgf7k.png')
+file8 = URI.open('https://res.cloudinary.com/dqlvehu5z/image/upload/v1583415486/iAoWJdUmYbWPVYfiixqG8BG8.png')
 
 berlinerstadtmission = User.create(
   username:"Berliner Stadtmission",
@@ -150,6 +158,7 @@ berlinerstadtmission = User.create(
   address: "Lehrter Str. 68 10557 Berlin",
   bio:"'Berliner Stadtmission' is an independent institution under the guardianship of the protestant church Berlin-Brandenburg-schlesische Oberlausitz.",
   full_name: "Tilo Winter",
+  role: "Charity",
   webpage: "https://www.berliner-stadtmission.de/"
 )
 
@@ -165,6 +174,7 @@ oceannow = User.create(
   address: "Danneckerstr. 8 10245 Berlin",
   bio:"Ocean. Now!  is an NGO accelerating ocean protection on all levels of society. We work with art. The “Sustainable Development Goal 14 (SDG 14)” of the Paris Climate Agreement is the fraame of our work.",
   full_name: "Ulli Schubert",
+  role: "Charity",
   webpage: "https://www.ocean-now.org/"
 )
 
@@ -181,6 +191,7 @@ unionhilfwerk = User.create(
   address: "Mühsamstraße 33 10249 Berlin",
   bio:"Since 1946, the UNIONHILFSWERK has been providing social aid out of Christian responsibility. To this day, we remain committed to those who depend on care and support. Our commitment is shaped by our mission statement 'to create an individual quality of life' in order to help people to help themselves. Originating from 70 years of civic involvement, voluntary involvement continues to be a fundamental pillar of our commitment to others.",
   full_name: "Bernard Schuster",
+  role: "Charity",
   webpage: "https://www.unionhilfswerk.de/"
 )
 
@@ -197,6 +208,7 @@ casablanca = User.create(
   address: "Pistoriusstraße 108 a 13086 Berlin",
   bio:"Casablanca — a charitable society for innovative youth welfare services and social services mbH — has been devoted to using targeted welfare solutions to support children, young people and families in difficult life situations since 1995",
   full_name: "Dieter Brandt",
+  role: "Charity",
   webpage: "https://www.g-casablanca.de/"
 )
 
@@ -213,6 +225,7 @@ keinabseits = User.create(
   address: "Fehmarner Straße 12 13353 Berlin",
   bio:"The non-profit association 'kein Abseits! e.V.' realizes integration and education projects since 2011. In cooperation with Berlin schools, universities and refugee homes, we pursue the goal of enabling integrative encounters. Local and refugee children and adolescents are individually and holistically supported in a combination of sports and experiential educational offers, 1: 1 mentoring and vocational orientation.",
   full_name: "Otto Ziegler",
+  role: "Charity",
   webpage: "https://www.kein-abseits.de/"
 )
 
@@ -229,6 +242,7 @@ solinar = User.create(
   address: "Fehmarner Straße 12 13353 Berlin",
   bio:"The non-profit association 'kein Abseits! e.V.' realizes integration and education projects since 2011. In cooperation with Berlin schools, universities and refugee homes, we pursue the goal of enabling integrative encounters. Local and refugee children and adolescents are individually and holistically supported in a combination of sports and experiential educational offers, 1: 1 mentoring and vocational orientation.",
   full_name: "Otto Ziegler",
+  role: "Charity",
   webpage: "https://www.kein-abseits.de/"
 )
 solinar.photo.attach(io:file13, filename: 'logo13.jpg', content_type: 'image/jpg')
@@ -244,6 +258,7 @@ stepsforpeace = User.create(
   address: "Hochkirchstraße 7 10829 Berlin",
   bio:"Steps for Peace  is a nonprofit organisation based in Berlin that supports social and political transformation processes in fragile contexts. Our work focuses on education, research and development cooperation.",
   full_name: "Gotlinde Pfeiffer",
+  role: "Charity",
   webpage: "http://www.steps-for-peace.org/en/"
   )
 
@@ -264,6 +279,7 @@ file15 = URI.open('https://res.cloudinary.com/dqlvehu5z/image/upload/v1583408178
   address: "Brandenburgische Straße 18 13189 Berlin",
   bio:"Spanish Graphic designer / illustrator / font designer want to become a web developer. Ten years in Germany, last two of them in Berlin Schöneberg.",
   full_name: "Luis Caballero",
+  role: "Volunteer",
   webpage: "http://www.luisitotopprogrammer.com"
 )
 
@@ -280,6 +296,7 @@ file16 = URI.open('https://res.cloudinary.com/dqlvehu5z/image/upload/v1583408178
   address: "Brandenburgische Straße 83 12279 Berlin",
   bio:"Im Daniel. Half Greek half German. I have completed a three year apprenticeship(ausbildung) in a hotel in Germany and a bachelor in International Hotel Management. Having worked for a while in hotels I noticed that I did not like it so much and decided to change my career. Now in my free time I try to held others",
   full_name: "Daniel Sperling",
+  role: "Volunteer",
   webpage: "http://www.malaka.com"
 )
 
@@ -294,6 +311,7 @@ file17 = URI.open('https://res.cloudinary.com/dqlvehu5z/image/upload/v1583408177
   address: "Leopoldstraße 66 13503 Berlin",
   bio: "Producer of electronic music and tech enthusiast, I use to work in webmarketing. i'm interested in helping others",
   full_name: "Jean Kabuiku",
+  role: "Volunteer",
   webpage: "http://www.bestdjinberlin.com"
 )
 
@@ -311,6 +329,7 @@ file18 = URI.open('https://res.cloudinary.com/dqlvehu5z/image/upload/v1583408177
   address: "Brandenburgische Straße 45 10997 Berlin",
   bio: "TA at Lewagon i'm interested in helping others",
   full_name: "Claire Croissant",
+  role: "Volunteer",
   webpage: "http://www.bestTAlewagon.com"
 )
 
@@ -328,6 +347,7 @@ file19 = URI.open('https://res.cloudinary.com/dqlvehu5z/image/upload/v1583408180
   address: "Genslerstraße 43 10779 Berlin",
   bio: "I have been a management consultant and am pretty tired of it. Why not helping people instead?",
   full_name: "Tim Vierboom",
+  role: "Volunteer",
   webpage: "http://www.bestTAlewagon.com"
 )
 
