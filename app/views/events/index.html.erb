@@ -1,33 +1,28 @@
-<div class="card-content d-flex">
-  <div class="cards d-flex col-lg-6 col-md-6 col-sm-12 col-12">
+<div class="d-flex">
+  <div class="container w-50">
     <% if @events %>
-    <div class="row justify-content-center">
-      <p><% @events.each do |event| %>
-        <% if event.starts_at > Date.today %>
-        <div class="card m-3 col-xl-5 col-lg-10 col-md-10 col-sm-10 col-10 text-center">
-            <p><%= cl_image_tag event.photo.key %></p>
-            <h2><%= link_to(event.name, event_path(event)) %></h2>
-            <p><%= link_to(event.user.username, user_path(event.user)) %></p>
-            <h5><%= event.description %></h5>
-            <p>Starts at: <%= event.starts_at_formatted %></p>
-            <p>Ends at: <%= event.ends_at_formatted %></p>
-        </div>
-        <% end %>
+    <div class="row">
+      <% @events.each do |event| %>
+      <% if event.starts_at > Date.today %>
+      <div class="card m-4 col-xl-5 col-lg-10 text-center">
+        <p><%= cl_image_tag event.photo.key %></p>
+        <h2><%= link_to(event.name, event_path(event)) %></h2>
+        <p>Host: <%= link_to(event.user.username, user_path(event.user)) %></p>
+        <h5>Cause: <%= event.category %></h5>
+        <p>Starts at: <%= event.starts_at_formatted %></p>
+        <p>Ends at: <%= event.ends_at_formatted %></p>
+      </div>
       <% end %>
-      </p>
+      <% end %>
     </div>
     <% end %>
   </div>
 
 
-  <div id="map"
-  style="width: 100%;
-  height: 600px;"
+  <div id="map" class="w-50"
   data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 
-  </div>
-
-
+</div>
 
