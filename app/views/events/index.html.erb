@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
       <p><% @events.each do |event| %>
         <% if event.starts_at > Date.today %>
-        <div class="card m-4 col-lg-5 col-md-10 col-sm-10 col-10 text-center">
+        <div class="card m-3 col-xl-5 col-lg-10 col-md-10 col-sm-10 col-10 text-center">
             <p><%= cl_image_tag event.photo.key %></p>
             <h2><%= link_to(event.name, event_path(event)) %></h2>
             <p><%= link_to(event.user.username, user_path(event.user)) %></p>
