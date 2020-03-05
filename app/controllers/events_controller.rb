@@ -24,6 +24,7 @@ class EventsController < ApplicationController
       }
       end
     end
+    @markers.compact!
   end
 
   def show
