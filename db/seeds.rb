@@ -8,8 +8,6 @@
 
 require "open-uri"
 
-User.destroy_all
-
 # charity 1
 file = URI.open('https://res.cloudinary.com/dqlvehu5z/image/upload/v1583321091/CHIP-IN/Charities%20pics/young-caritas_l7dvam.jpg')
 
@@ -23,7 +21,7 @@ youngcaritas = User.create(
   webpage: "http://www.youngcaritas.de/lokalisiert/berlin"
 )
 
-youngcaritas.photo.attach(io:file, filename:'logo.jpg', content_type: 'image/png')
+youngcaritas.photo.attach(io:file, filename:'logo.jpg', content_type: 'image/jpg')
 
 
 #charity 2
@@ -349,5 +347,10 @@ file20 = URI.open('https://res.cloudinary.com/dqlvehu5z/image/upload/v1583408177
 )
 
 abby.photo.attach(io:file20, filename:'logo20.jpg', content_type: 'image/jpg')
+
+
+
+
+
 
 
