@@ -256,7 +256,6 @@ stepsforpeace.photo.attach(io:file14, filename: 'logo14.jpg', content_type: 'ima
 #volunteer 1
 file15 = URI.open('https://res.cloudinary.com/dqlvehu5z/image/upload/v1583408178/CHIP-IN/Volunteers/Luis_ofn4ym.jpg')
 
-
  luisito = User.create(
   username:"topdesigner",
   password: "1234556",
