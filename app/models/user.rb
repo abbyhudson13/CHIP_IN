@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  enum role: [:Charity, :Volunteer]
   has_many :requests, dependent: :destroy
   has_many :events, dependent: :destroy
   has_one_attached :photo
