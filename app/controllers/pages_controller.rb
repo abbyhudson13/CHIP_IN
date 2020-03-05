@@ -4,12 +4,15 @@ class PagesController < ApplicationController
 
   def dashboard
     @user = current_user
-    @future_requests = @user.requests.select do |request|
-      request.event.starts_at > Date.today
+    if @user.role == "Volunteer"
+      @future_requests = @user.requests.select do |request|
+        request.event.starts_at > Date.today
+      end
+      @past_requests = @user.requests.select do |request|
+        request.event.starts_at < Date.today
+      end
+    elsif @user.role == "Charity"
+      @events = @user.events
     end
-    @past_requests = @user.requests.select do |request|
-      request.event.starts_at < Date.today
-    end
-
   end
 end
