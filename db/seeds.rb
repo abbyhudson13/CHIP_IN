@@ -24,7 +24,7 @@ youngcaritas = User.create(
   webpage: "http://www.youngcaritas.de/lokalisiert/berlin"
 )
 
-youngcaritas.photo.attach(io:file, filename:'logo.jpg', content_type: 'image/png')
+youngcaritas.photo.attach(io:file, filename:'logo.jpg', content_type: 'image/jpg')
 
 
 #charity 2
