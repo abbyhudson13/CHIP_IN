@@ -1,12 +1,28 @@
-.card img {
+.card-chip img {
   margin: 10px;
   height: 100px;
   object-fit: cover;
 }
 
-.card {
+.card-chip {
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
   justify-content: space-between;
+  border-radius: 5px;
 }
+
+.event-content {
+  background-color: #856c8b;
+  color: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+
+ .event-content a {
+    text-decoration: none;
+    color: white;
+
+  &:hover{
+    color: #F0F0F0;
+    }
+  }

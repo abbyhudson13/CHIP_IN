@@ -4,14 +4,15 @@
     <div class="row">
       <% @events.each do |event| %>
       <% if event.starts_at > Date.today %>
-      <div class="card m-4 col-xl-5 col-lg-10 text-center">
-        <p><%= cl_image_tag event.photo.key %></p>
-        <h2><%= link_to(event.name, event_path(event)) %></h2>
-        <p>Host: <%= link_to(event.user.username, user_path(event.user)) %></p>
-        <h5>Cause: <%= event.category %></h5>
-        <p>Starts at: <%= event.starts_at_formatted %></p>
-        <p>Ends at: <%= event.ends_at_formatted %></p>
-        <p><%= event.capacity - event.requests.length %> spots left</p>
+      <div class="card-chip m-4 col-xl-5 col-lg-10 p-0 text-center">
+        <p class="mb-0"><%= cl_image_tag event.photo.key %></p>
+        <div class="event-content p-3">
+          <h2><%= link_to(event.name, event_path(event)) %></h2>
+          <p>Host: <%= link_to(event.user.username, user_path(event.user),target: :_blank) %></p>
+          <h5>Cause: <%= event.category %></h5>
+          <p>Date: <%= event.starts_at_formatted %></p>
+          <p class="mb-0 p-1"><%= event.capacity - event.requests.length %> spots left</p>
+        </div>
       </div>
       <% end %>
       <% end %>
