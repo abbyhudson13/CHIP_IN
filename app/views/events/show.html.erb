@@ -1,17 +1,16 @@
 
 <div class="container" id="show-page-content">
-  <div class="content-show">
-    <div class="">
-      <h1><%= @event.name %></h1>
+  <div class="content-show d-flex flex-column">
+      <div class="row m-15">
+        <h1 class="mt-5 mx-2"><%= @event.name %></h1>
       <hr>
-      <h4><%= @event.address %></h4>
-      <div class="d-flex mt -5">
+      <div class="d-flex mt-5 align-self-end">
         <h5>Hosted by: <%= link_to(@event.user.username, user_path(@event.user)) %></h5>
         <p><%= cl_image_tag @event.user.photo.key, width: "70px", class: "ml-5" %></p>
       </div>
     </div>
-
-    <div class="row align-self-center">
+       <h4><%= @event.address %></h4>
+    <div class="row">
       <div class="col-lg-4 col-sm-12 py-4">
         <div>
           <%= cl_image_tag @event.photo.key, width: "300px" %>
