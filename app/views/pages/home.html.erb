@@ -2,7 +2,7 @@
   <div class="container py-5">
     <h1>Chip In</h1>
     <%= simple_form_for :search, method: :get, url: events_path do |f|%>
-    <%= f.input :query, label: false, placeholder: "Search" %>
+    <%= f.input :query, label: false, placeholder: "Search (e.g. Berlin, poverty...)" %>
     <%= f.submit "Submit", as: :hidden, class: "d-none" %>
     <!-- <%= f.submit "Submit", class: "btn btn-primary" %> -->
     <% end %>
@@ -21,7 +21,6 @@
                 <p><%= cl_image_tag event.photo.key %></p>
                 <h2><%= link_to(event.name, event_path(event)) %></h2>
                 <p><%= link_to(event.user.username, user_path(event.user)) %></p>
-                <h5><%= event.description %></h5>
                 <p>Starts at: <%= event.starts_at_formatted %></p>
                 <p>Ends at: <%= event.ends_at_formatted %></p>
               </div>
