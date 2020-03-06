@@ -6,19 +6,19 @@
         <div class="container py-5">
           <h1>Upcoming events:</h1>
           <div class="">
-            <div class="row align-self-center">
+            <div class="row justify-content-center">
               <% if @future_requests %>
                 <% @future_requests.each do |request| %>
                   <% event = request.event %>
-                <div class="col-lg-4 col-sm-12 py-4">
-                  <div class="card">
-                    <h2><%= event.name %></h2>
-                    <h4>Hosted by: <%= link_to(event.user.username, user_path(event.user)) %></h4>
-                    <h5><%= event.description %></h5>
-                    <h5>Starts at: <%= event.starts_at_formatted %></h5>
-                    <h5>Ends at: <%= event.ends_at_formatted %></h5>
-                    <p>Status:<%= request.status %></p>
-                    <%= cl_image_tag event.photo.key, width: "300px" %>
+                <div class="card-chip m-4 col-xl-3 col-lg-3 p-0 text-center">
+                  <p class="mb-0"><%= cl_image_tag event.photo.key %></p>
+                  <div class="event-content p-3">
+                    <h2><%= link_to(event.name, event_path(event)) %></h2>
+                    <p>Host: <%= link_to(event.user.username, user_path(event.user)) %></p>
+                    <h5>Cause: <%= event.category %></h5>
+                    <p>Starts at: <%= event.starts_at_formatted %></p>
+                    <p>Ends at: <%= event.ends_at_formatted %></p>
+                    <p>Status :<%= request.status %></p>
                   </div>
                 </div>
                 <% end %>
@@ -26,9 +26,9 @@
             </div>
           </div>
         </div>
-      </section>  
+      </section>
   </div>
-  
+
   <hr>
 
   <div class="past-events">
@@ -36,18 +36,18 @@
       <div class="container py-5">
         <h1>Past events:</h1>
         <div class="">
-          <div class="row align-self-center">
+          <div class="row justify-content-center">
             <% if @past_requests %>
               <% @past_requests.each do |request| %>
                 <% event = request.event %>
-              <div class="col-lg-4 col-sm-12 py-4">
-                <div class="card">
-                  <h2><%= event.name %></h2>
-                  <h4>Hosted by: <%= link_to(event.user.username, user_path(event.user)) %></h4>
+              <div class="card-chip m-4 col-xl-3 col-lg-3 p-0 text-center">
+                <p class="mb-0"><%= cl_image_tag event.photo.key %></p>
+                <div class="event-content p-3">
+                  <h2><%= link_to(event.name, event_path(event)) %></h2>
+                  <p>Host: <%= link_to(event.user.username, user_path(event.user)) %></p>
                   <h5><%= event.description %></h5>
-                  <h5>Starts at: <%= event.starts_at_formatted %></h5>
-                  <h5>Ends at: <%= event.ends_at_formatted %></h5>
-                  <%= cl_image_tag event.photo.key, width: "300px" %>
+                  <p>Starts at: <%= event.starts_at_formatted %></p>
+                  <p>Ends at: <%= event.ends_at_formatted %></p>
                 </div>
               </div>
               <% end %>
@@ -55,7 +55,7 @@
           </div>
         </div>
       </div>
-    </section>  
+    </section>
 </div>
 
 
