@@ -1,17 +1,21 @@
 <div class="d-flex">
   <div class="container w-50">
     <% if @events %>
-    <div class="row">
+    <div class="row h-100">
       <% @events.each do |event| %>
       <% if event.starts_at > Date.today %>
-      <div class="card-chip m-4 col-xl-5 col-lg-10 p-0 text-center">
-        <p class="mb-0"><%= cl_image_tag event.photo.key %></p>
-        <div class="event-content p-3">
-          <h2><%= link_to(event.name, event_path(event)) %></h2>
-          <p>Host: <%= link_to(event.user.username, user_path(event.user),target: :_blank) %></p>
-          <h5>Cause: <%= event.category %></h5>
-          <p>Date: <%= event.starts_at_formatted %></p>
-          <p class="mb-0 p-1"><%= event.capacity - event.requests.length %> spots left</p>
+      <div class="m-4 col-xl-5 col-lg-10 p-0 text-center">
+        <div class="card-chip h-100">
+          <div class="card-chip-image">
+            <%= cl_image_tag event.photo.key, class: "mb-0" %>
+          </div>
+          <div class="event-content p-3">
+            <h2><%= link_to(event.name, event_path(event)) %></h2>
+            <p>Host: <%= link_to(event.user.username, user_path(event.user),target: :_blank) %></p>
+            <h5>Cause: <%= event.category %></h5>
+            <p>Date: <%= event.starts_at_formatted %></p>
+            <p class="mb-0 p-1"><%= event.capacity - event.requests.length %> spots left</p>
+          </div>
         </div>
       </div>
       <% end %>
