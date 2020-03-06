@@ -6,12 +6,14 @@
         <div class="container py-5">
           <h1>Upcoming events:</h1>
           <div class="">
-            <div class="row justify-content-center">
+            <div class="row h-100">
               <% if @future_requests %>
                 <% @future_requests.each do |request| %>
                 <% event = request.event %>
                 <div class="card-chip m-4 col-xl-3 col-lg-3 p-0 text-center">
-                  <p class="mb-0"><%= cl_image_tag event.photo.key %></p>
+                  <div class="card-chip-image">
+                    <p class="mb-0"><%= cl_image_tag event.photo.key %></p>
+                  </div>
                   <div class="event-content p-3">
                     <h2><%= link_to(event.name, event_path(event)) %></h2>
                     <p>Host: <%= link_to(event.user.username, user_path(event.user)) %></p>
