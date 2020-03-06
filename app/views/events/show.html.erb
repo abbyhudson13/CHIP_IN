@@ -6,7 +6,7 @@
       <hr>
       <h4><%= @event.address %></h4>
     </div>
-    
+
     <div class="row align-self-center">
       <div class="col-lg-4 col-sm-12 py-4">
         <div>
@@ -16,14 +16,15 @@
       <div class="col-lg-4 col-sm-12 py-4">
         <div>
           <p><strong>From</strong> <%= @event.starts_at_formatted %> <strong>to</strong> <%= @event.ends_at_formatted %></p>
-          <p><%= @event.capacity %></p>
+          <p><%= @event.capacity - @event.requests.length %> spots left!</p>
           <p><%= @event.description %></p>
+          <% raise %>
         </div>
         <%= link_to "Request participation", new_event_request_path(@event), class: 'btn btn-primary' %>
       </div>
     </div>
   </div>
-  
+
   <div
   id="map"
   style="width: 100%;
@@ -31,9 +32,9 @@
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   ></div>
-  
-  
-  
+
+
+
 </div>
 
 

@@ -11,6 +11,7 @@
         <h5>Cause: <%= event.category %></h5>
         <p>Starts at: <%= event.starts_at_formatted %></p>
         <p>Ends at: <%= event.ends_at_formatted %></p>
+        <p><%= event.capacity - event.requests.length %> spots left</p>
       </div>
       <% end %>
       <% end %>
