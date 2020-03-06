@@ -4,31 +4,31 @@
         <div class="row  py-4">
             <div class="col-lg-4 col-sm-12">
                 <div class="first-half">
-                    <p class="row d-flex justify-content-center"><%= cl_image_tag @user.photo.key, :class => 'profile-img' %></p>
-                    <div class="hr-style"><hr></div>
-                    <h1><%= @user.username %></h1>
-                    <h6><%= @user.full_name %></h6>
-                    <p><%= link_to "Go to #{@user.username}'s Website", @user.webpage , target: "_blank", rel: "nofollow"  %></p>
-                    <p><%= mail_to @user.email, "Email #{@user.username}" %></p>
+                  <p class="row d-flex justify-content-center"><%= cl_image_tag @user.photo.key, :class => 'profile-img' %></p>
+                  <div class="hr-style"><hr></div>
+                  <h1><%= @user.username %></h1>
+                  <h6><%= @user.full_name %></h6>
+                  <p><%= link_to "Go to #{@user.username}'s Website", @user.webpage , target: "_blank", rel: "nofollow"  %></p>
+                  <p><%= mail_to @user.email, "Email #{@user.username}" %></p>
                 </div>
             </div>
-            
+
             <div class="col-lg-8 col-sm-12">
                 <div class="second-half">
                     <div class="user-details">
-                        <h1 class="d-flex justify-content-center">HEADING</h1>
-                        <h3>About:</h3>
-                        <p><%= @user.bio %></p>
-                        <p>Other events hosted by <%= @user.username %>:</p>
+                      <h1 class="d-flex justify-content-center">HEADING</h1>
+                      <h3>About:</h3>
+                      <p><%= @user.bio %></p>
+                      <p>Other events hosted by <%= @user.username %>:</p>
                     </div>
                     <hr>
                     <div class="reviews d-flex justify-content-center">
-                        <h1>Reviews</h1>
+                      <h1>Reviews</h1>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Write a Review!</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                        
+                      <label for="exampleFormControlTextarea1">Write a Review!</label>
+                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      <%= link_to 'Submit', "#", class: "btn btn-primary" %>
                     </div>
                 </div>
             </div>
