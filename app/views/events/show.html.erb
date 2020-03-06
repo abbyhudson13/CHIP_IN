@@ -5,6 +5,10 @@
       <h1><%= @event.name %></h1>
       <hr>
       <h4><%= @event.address %></h4>
+      <div class="d-flex mt -5">
+        <h5>Hosted by: <%= link_to(@event.user.username, user_path(@event.user)) %></h5>
+        <p><%= cl_image_tag @event.user.photo.key, width: "70px", class: "ml-5" %></p>
+      </div>
     </div>
 
     <div class="row align-self-center">
@@ -18,6 +22,7 @@
           <p><strong>From</strong> <%= @event.starts_at_formatted %> <strong>to</strong> <%= @event.ends_at_formatted %></p>
           <p><%= @event.capacity - @event.requests.length %> spots left!</p>
           <p><%= @event.description %></p>
+
         </div>
         <%= link_to "Request participation", new_event_request_path(@event), class: 'btn btn-primary' %>
       </div>
