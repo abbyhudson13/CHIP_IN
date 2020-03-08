@@ -15,4 +15,8 @@ class Event < ApplicationRecord
   def ends_at_formatted
     ends_at.strftime('%A, %d %b %Y %l:%M %p')
   end
+
+  def ends_at_time
+    ends_at.strftime('%l:%M %p')
+  end
 end
