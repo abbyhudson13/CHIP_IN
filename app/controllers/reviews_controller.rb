@@ -1,5 +1,9 @@
 class ReviewsController < ApplicationController
   before_action :set_user
+
+  def index
+  end
+
   def new
     @review = Review.new
   end
@@ -8,8 +12,11 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.reviewer = current_user
     @review.reviewee = User.find(params[:user_id])
-    @review.save
-    redirect_to user_path(@user)
+    if @review.save
+      redirect_to user_path(@user)
+    else
+      render :new
+    end
   end
 
   private
