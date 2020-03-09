@@ -20,7 +20,7 @@
             <h2 class="font-weight-bold"><%= link_to(event.name, event_path(event)) %></h2>
             <p>Host: <%= link_to(event.user.username, user_path(event.user),target: :_blank) %></p>
             <h5>Cause: <%= event.category %></h5>
-            <p>Date: <strong>From </strong><%= event.starts_at_formatted %> <strong> to </strong><%= event.ends_at_time %></p>
+            <p>Date: <%= event.starts_at_formatted %> <strong> to </strong><%= event.ends_at_time %></p>
             <p class="mb-0 p-1"><%= event.capacity - event.requests.length %> spots left</p>
           </div>
         </div>
