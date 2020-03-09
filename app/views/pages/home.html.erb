@@ -1,7 +1,7 @@
 <section class="banner">
   <div class="container py-5">
     <h1>Chip In</h1>
-    <p>Find community service near you</p>
+    <p>Find volunteering experiences near you</p>
     <div class="homepage-search">
       <%= simple_form_for :search, method: :get, url: events_path do |f|%>
       <%= f.input :query, label: false, placeholder: "Search (e.g. Berlin, poverty...)" %>
@@ -14,7 +14,7 @@
 
 <section class="section">
   <div class="container py-5">
-    <h2>Featured events</h2>
+    <h2 class="chip-purple">Featured events</h2>
     <div class="">
       <div class="row h-100 justify-content-center">
         <% @events.sample(3).each do |event| %>
@@ -27,7 +27,7 @@
                   <div class="event-content p-3">
                     <h2><%= link_to(event.name, event_path(event)) %></h2>
                     <p>Host: <%= link_to(event.user.username, user_path(event.user),target: :_blank) %></p>
-                    <h5>Cause: <%= event.category %></h5>
+                    <p>Cause: <%= event.category %></p>
                     <p>Date: <%= event.starts_at_formatted %></p>
                     <p class="mb-0 p-1"><%= event.capacity - event.requests.length %> spots left</p>
                   </div>

@@ -1,15 +1,33 @@
 .card-chip img {
-  margin: 10px;
-  height: 100px;
+  // margin: 10px;
+  height: 150px;
   object-fit: cover;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .card-chip {
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   justify-content: space-between;
   border-radius: 5px;
-  background-color: #856c8b;
-  height: 100%
+  background-color: #ffffff;
+  height: 100%;
+  text-align: left;
+}
+
+.card-chip h2 a{
+  color:#856c8b;
+}
+
+.card-chip p{
+  color: #7D7D7D;
+}
+
+.card-chip p a{
+  color: #7D7D7D;
 }
 
 .chip-avatar {
@@ -22,19 +40,22 @@
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   padding-bottom: 10px;
+  
 }
 
 .event-content {
-  color: white;
+  color: black;
 }
-
 
  .event-content a {
     text-decoration: none;
     color: white;
     font-weight: bold;
-
   &:hover{
-    color: #F0F0F0;
+    color: #bfadc4;
     }
   }
+
+.chip-purple{
+  color: $chip-purple;
+}
