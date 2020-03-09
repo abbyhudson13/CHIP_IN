@@ -3,17 +3,25 @@
   height: 100vh;
   position: sticky;
   top: 0;
-  width: 50%;
+  font-family: Lato;
+  color: #856c8b;
   a {
     text-decoration: none;
     font-weight: bold;
+    color: #856c8b;
+  }
+
+  img {
+    margin: 5px;
   }
 }
 
 .mapboxgl-popup {
-  max-width: 200px;
+  max-width: 160px;
+  padding: 0px;
 }
 
 .mapboxgl-popup-content {
   text-align: center;
+
 }
