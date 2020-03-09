@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background-color: white;
+  background-color: $chip-green;
   margin-bottom: 0px;
 
   .navbar-collapse {
@@ -12,6 +12,9 @@
   }
 }
 
+.nav-link{
+  color: rgb(50, 50,50) !important;
+}
 
 .dropdown-item {
   color: rgba(0, 0, 0, 0.5);
