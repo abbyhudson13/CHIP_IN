@@ -18,6 +18,30 @@
       </div>
       <div class="col-lg-4 col-sm-12 py-4">
         <div>
+          <div>
+            <%if @event.requests.length <1 %>
+            <%elsif @event.requests.length == 1 %>
+              <p><strong>People attending</strong></p>
+              <%= cl_image_tag request.user.photo.key, class:"avatar", title: request.user.username%>
+              <p> and <%=@event.capacity - @event.requests.length %> other people are helping in this event</p>
+            <% elsif @event.requests.length == 2%>
+              <p><strong>People attending</strong></p>
+              <% @event.requests.sample(2).each do |request|%>
+                <%= cl_image_tag request.user.photo.key, class:"avatar", title: request.user.username%>
+              <% end %>
+              <p> are helping in this event</p>
+            <% elsif @event.requests.length == 3 %>
+              <% @event.requests.sample(2).each do |request|%>
+                <%= cl_image_tag request.user.photo.key, class:"avatar", title: request.user.username%>
+              <% end %>
+              <p> and <%=@event.requests.length - 2  %> other person are helping in this event</p>
+            <% else %>
+              <% @event.requests.sample(2).each do |request|%>
+                <%= cl_image_tag request.user.photo.key, class:"avatar", title: request.user.username%>
+              <% end %>
+              <p> and <%=@event.requests.length - 2  %> other people are helping in this event</p>
+            <% end %>
+            </div>
           <p><strong>From</strong> <%= @event.starts_at_formatted %> <strong>to</strong> <%= @event.ends_at_formatted %></p>
           <p><%= @event.capacity - @event.requests.length %> spots left!</p>
           <p><%= @event.description %></p>
