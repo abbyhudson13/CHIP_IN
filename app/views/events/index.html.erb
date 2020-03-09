@@ -1,11 +1,13 @@
 <div class="d-flex">
   <div class="container w-50">
-    <% if @events.length > 0 %>
-    <%= simple_form_for :search, url: events_path, method: "GET" do |f| %>
-    <%= f.input :category, collection: Event::CATEGORIES %>
-    <%= f.hidden_field :query, value: "#{params[:search][:query]}" %>
-    <%= f.submit "Submit", class: "button-chip-main" %>
-    <% end %>
+      <% if @events.length > 0 %>
+      <%= simple_form_for :search, url: events_path, method: "GET" do |f| %>
+      <div class="d-flex justify-content-center align-items-center form-inline" id="category-form">
+        <%= f.input :category, label: "Cause", collection: Event::CATEGORIES %>
+          <%= f.hidden_field :query, value: "#{params[:search][:query]}" if params[:search].present? %>
+          <%= f.submit "Submit", class: "button-chip-main" %>
+      </div>
+      <% end %>
     <div class="row">
       <% @events.each do |event| %>
       <% if event.starts_at > Date.today %>
