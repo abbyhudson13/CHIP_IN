@@ -20,7 +20,14 @@
                     <h5>Cause: <%= event.category %></h5>
                     <p>Starts at: <%= event.starts_at_formatted %></p>
                     <p>Ends at: <%= event.ends_at_formatted %></p>
-                    <p>Status :<%= request.status %></p>
+                    <p class="<%=if request.status == "pending"
+                         "pending-button"
+                         elsif request.status == "confirmed"
+                          "confirmed-button"
+                        elsif request.status =="declined"
+                          "declined-button"
+                        else "cancelled-button"
+                          end %>"><%= request.status %></p>
                   </div>
                 </div>
                 <% end %>
