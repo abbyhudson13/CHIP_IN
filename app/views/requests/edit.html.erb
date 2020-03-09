@@ -1,0 +1,9 @@
+
+<div class="container">
+<%= simple_form_for [@event, @request] do |f| %>
+
+  <h2><%= @event.name %></h2>
+  <%= f.input :status, collection: 0..3 %>
+  <%= f.submit 'Submit', class: "button-chip-main"%>
+<% end %>
+</div>

@@ -24,8 +24,8 @@ class RequestsController < ApplicationController
   def update
 
     @request = Request.find(params[:id])
-    @request.update(request_params)
-    redirect_ root_path
+    @request.status = params[:request][:status].to_i
+    @request.update!(request_params)
     redirect_to event_path(@event)
   end
 
