@@ -22,12 +22,17 @@
                     </div>
                     <hr>
                     <div class="">
-                      <h1>Reviews</h1>
+                      <h3>Reviews:</h1>
                       <% @user.reviews_as_reviewee.each do |review| %>
                         <div>
-                          <p><%= review.rating %> stars</p>
+                          <% review.rating.times do %>
+                            <i class="fas fa-star" style="color: #EDB867"></i>
+                          <% end %>
+                          <% (5 - review.rating).times do %>
+                            <i class="far fa-star" style="color: #EDB867"></i>
+                          <% end %>
                           <p>Reviewed by: <%= link_to(review.reviewer.full_name, user_path(review.reviewer)) %></p>
-                          <p>"<%= review.content %>"</p>
+                          <p><em>"<%= review.content %>"</em></p>
                         </div>
                       <% end %>
                     </div>
