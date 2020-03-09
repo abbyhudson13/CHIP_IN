@@ -1,7 +1,12 @@
 <div class="d-flex">
   <div class="container w-50">
-    <% if @events %>
-    <div class="row h-100">
+    <% if @events.length > 0 %>
+    <%= simple_form_for :search, url: events_path, method: "GET" do |f| %>
+    <%= f.input :category, collection: Event::CATEGORIES %>
+    <%= f.hidden_field :query, value: "#{params[:search][:query]}" %>
+    <%= f.submit "Submit", class: "button-chip-main" %>
+    <% end %>
+    <div class="row">
       <% @events.each do |event| %>
       <% if event.starts_at > Date.today %>
       <div class="m-4 col-xl-5 col-lg-10 p-0 text-center">
@@ -11,7 +16,7 @@
           </div>
           <div class="event-content p-3">
             <h2 class="font-weight-bold"><%= link_to(event.name, event_path(event)) %></h2>
-              <p>Host: <%= link_to(event.user.username, user_path(event.user),target: :_blank) %></p>
+            <p>Host: <%= link_to(event.user.username, user_path(event.user),target: :_blank) %></p>
             <h5>Cause: <%= event.category %></h5>
             <p>Date: <strong>From </strong><%= event.starts_at_formatted %> <strong> to </strong><%= event.ends_at_time %></p>
             <p class="mb-0 p-1"><%= event.capacity - event.requests.length %> spots left</p>
@@ -21,13 +26,18 @@
       <% end %>
       <% end %>
     </div>
+    <% else %>
+    <div class="error">
+      <p>Sorry, no results found</p>
+      <%= link_to("Try Again", root_path, class: "button-chip-secondary") %></p>
+    </div>
     <% end %>
   </div>
 
 
   <div id="map" class="w-50"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 
 </div>
