@@ -50,6 +50,7 @@
                   <h5><%= event.description %></h5>
                   <p>Starts at: <%= event.starts_at_formatted %></p>
                   <p>Ends at: <%= event.ends_at_formatted %></p>
+                  <%= link_to "Review the host", new_user_review_path(event.user), class: "button-chip-main" %>
                 </div>
               </div>
               <% end %>

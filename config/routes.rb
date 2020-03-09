@@ -4,11 +4,12 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get 'dashboard', to: 'pages#dashboard'
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    resources :reviews, only: [:index, :new, :create]
+  end
   resources :events do
     resources :requests, only: [:new, :create]
   end
-
   # According to Alexander, destroy action of requests should not be nested into events
   resources :requests, only: :destroy do
     member do

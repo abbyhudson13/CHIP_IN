@@ -1,4 +1,3 @@
-
 <div class="container-fluid">
     <div class="container">
         <div class="row  py-4">
@@ -22,14 +21,15 @@
                         <p>Other events hosted by <%= @user.username %>:</p>
                     </div>
                     <hr>
-                    <div class="reviews d-flex justify-content-center">
+                    <div class="">
                       <h1>Reviews</h1>
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleFormControlTextarea1">Write a Review!</label>
-                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                      <br>
-                      <%= link_to 'Submit', "#", class: "button-chip-main" %>
+                      <% @user.reviews_as_reviewee.each do |review| %>
+                        <div>
+                          <p><%= review.rating %> stars</p>
+                          <p>Reviewed by: <%= link_to(review.reviewer.full_name, user_path(review.reviewer)) %></p>
+                          <p>"<%= review.content %>"</p>
+                        </div>
+                      <% end %>
                     </div>
                 </div>
             </div>
