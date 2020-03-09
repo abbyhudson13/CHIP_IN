@@ -1,11 +1,14 @@
 <section class="banner">
   <div class="container py-5">
     <h1>Chip In</h1>
-    <%= simple_form_for :search, method: :get, url: events_path do |f|%>
-    <%= f.input :query, label: false, placeholder: "Search (e.g. Berlin, poverty...)" %>
-    <%#= f.submit "Submit", as: :hidden, class: "d-none" %>
-    <%= f.submit "Submit", class: "button-chip-main" %>
-    <% end %>
+    <p>Find community service near you</p>
+    <div class="homepage-search">
+      <%= simple_form_for :search, method: :get, url: events_path do |f|%>
+      <%= f.input :query, label: false, placeholder: "Search (e.g. Berlin, poverty...)" %>
+      <%= f.submit "Submit", as: :hidden, class: "d-none" %>
+      <%= f.submit "Submit", class: "button-chip-main" %>
+      <% end %>
+    </div>
   </div>
 </section>
 
