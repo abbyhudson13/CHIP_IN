@@ -1,44 +1,49 @@
 <div class="container-fluid">
-    <div class="container">
-        <div class="row  py-4">
-            <div class="col-lg-4 col-sm-12">
-                <div class="first-half">
-                  <p class="row d-flex justify-content-center"><%= cl_image_tag @user.photo.key, :class => 'profile-img' %></p>
-                  <div class="hr-style"><hr></div>
-                  <h1><%= @user.username %></h1>
-                  <h6><%= @user.full_name %></h6>
-                  <p><%= link_to "Go to #{@user.username}'s Website", @user.webpage , target: "_blank", rel: "nofollow"  %></p>
-                  <p><%= mail_to @user.email, "Email #{@user.username}" %></p>
-                </div>
-            </div>
-
-            <div class="col-lg-8 col-sm-12">
-                <div class="second-half">
-                    <div class="user-details">
-                        <h1 class="d-flex justify-content-center"><%= @user.username%>'s Profile</h1>
-                        <h3>About:</h3>
-                        <p><%= @user.bio %></p>
-                        <p>Other events hosted by <%= @user.username %>:</p>
-                    </div>
-                    <hr>
-                    <div class="">
-                      <h3>Reviews:</h1>
-                      <% @user.reviews_as_reviewee.each do |review| %>
-                        <div>
-                          <% review.rating.times do %>
-                            <i class="fas fa-star" style="color: #EDB867"></i>
-                          <% end %>
-                          <% (5 - review.rating).times do %>
-                            <i class="far fa-star" style="color: #EDB867"></i>
-                          <% end %>
-                          <p>Reviewed by: <%= link_to(review.reviewer.full_name, user_path(review.reviewer)) %></p>
-                          <p><em>"<%= review.content %>"</em></p>
-                        </div>
-                      <% end %>
-                    </div>
-                </div>
-            </div>
+  <div class="container">
+    <div class="row py-4">
+      <div class="col-lg-4 col-sm-12">
+        <div class="first-half">
+          <p class="row d-flex justify-content-center"><%= cl_image_tag @user.photo.key, :class => 'profile-img' %></p>
+          <div class="hr-style"><hr></div>
+          <h1><%= @user.username %></h1>
+          <h6><%= @user.full_name %></h6>
+          <p><%= link_to "Go to #{@user.username}'s Website", @user.webpage , target: "_blank", rel: "nofollow"  %></p>
+          <p><%= mail_to @user.email, "Email #{@user.username}" %></p>
         </div>
+      </div>
+
+      <div class="col-lg-8 col-sm-12">
+        <div class="second-half">
+          <div class="user-details">
+            <h1 class="d-flex justify-content-center"><%= @user.username%>'s Profile</h1>
+            <h3>About:</h3>
+            <p><%= @user.bio %></p>
+            <h4>Other events hosted by <%= @user.username %>:</h4>
+            <ul>
+              <% @user.events.each do |event|%>
+                <li><%= link_to(event.name, event_path(event)) %></li>
+              <% end %>
+            </ul>
+          </div>
+          <hr>
+          <div class="">
+            <h3>Reviews:</h1>
+            <% @user.reviews_as_reviewee.each do |review| %>
+              <div>
+                <% review.rating.times do %>
+                  <i class="fas fa-star" style="color: #EDB867"></i>
+                <% end %>
+                <% (5 - review.rating).times do %>
+                  <i class="far fa-star" style="color: #EDB867"></i>
+                <% end %>
+                <p>Reviewed by: <%= link_to(review.reviewer.full_name, user_path(review.reviewer)) %></p>
+                <p><em>"<%= review.content %>"</em></p>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 
