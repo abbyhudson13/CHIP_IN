@@ -31,11 +31,13 @@
               <% end %>
               <p> are helping in this event</p>
             <% elsif @event.requests.length == 3 %>
+              <p><strong>People attending</strong></p>
               <% @event.requests.sample(2).each do |request|%>
                 <%= cl_image_tag request.user.photo.key, class:"avatar", title: request.user.username%>
               <% end %>
               <p> and <%=@event.requests.length - 2  %> other person are helping in this event</p>
             <% else %>
+              <p><strong>People attending</strong></p>
               <% @event.requests.sample(2).each do |request|%>
                 <%= cl_image_tag request.user.photo.key, class:"avatar", title: request.user.username%>
               <% end %>
