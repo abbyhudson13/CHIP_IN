@@ -1,4 +1,5 @@
 <%= simple_form_for [@event, @request] do |f| %>
+  <%= f.input :username %>
   <%= f.input :message %>
   <%= f.submit 'Submit', class: "button-chip-main"%>
 <% end %>

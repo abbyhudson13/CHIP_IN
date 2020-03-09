@@ -43,7 +43,7 @@ class RequestsController < ApplicationController
   private
 
   def request_params
-    params.require(:request).permit(:message)
+    params.require(:request).permit(:message, :username)
   end
   def set_event
     @event = Event.find(params[:event_id])
