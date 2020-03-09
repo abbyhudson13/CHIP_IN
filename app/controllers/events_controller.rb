@@ -12,6 +12,8 @@ class EventsController < ApplicationController
       OR description ILIKE :query
       "
       @events = Event.where(sql, query: "%#{params[:search][:query]}%").geocoded
+      @events = @events.where(category: params[:search][:category]).geocoded if params[:search][:category].present?
+
     end
 
     @markers = @events.map do |event|
