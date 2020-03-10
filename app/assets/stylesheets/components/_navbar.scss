@@ -17,17 +17,62 @@
 }
 
 .dropdown-item {
-  color: rgba(0, 0, 0, 0.5);
+  color: $color-transparent-black;
+  transition-duration: 0.5s;
 
   &:active {
-    color: $color-transparent-black;
+    color: rgb(50, 50,50);
     text-decoration: none;
     background-color: white;
   }
 
   &:hover {
-    color: $color-transparent-black;
+    color: rgb(50, 50,50);
     background-color: white;
   }
 }
 
+$animate: all 0.2s ease-in-out;
+
+.hover-underline {
+  margin-right: 10px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  .hover {
+    text-align: center;
+    transition: $animate;
+    position: relative;
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 5px;
+      width: 0px;
+      height: 2px;
+      transition: $animate;
+      transition-duration: 0.5s;
+      opacity: 0;
+      background-color: rgb(50, 50, 50);
+    }
+
+    &.hover-1 {
+      &:before,
+      &:after {
+        left: 0;
+      }
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    .hover {
+      &:before,
+      &:after {
+        width: 100%;
+        opacity: 1;
+      }
+    }
+  }
+}
