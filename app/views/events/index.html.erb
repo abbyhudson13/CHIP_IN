@@ -11,7 +11,7 @@
     <div class="row">
       <% @events.each do |event| %>
       <% if event.starts_at > Date.today %>
-      <div class="m-4 col-xl-5 col-lg-10 p-0 text-center">
+      <div class="m-4 col-xl-5 col-lg-11 p-0 text-center">
         <div class="card-chip">
           <div class="event-content d-flex flex-column h-100">
             <div class="card-chip-image">
@@ -19,7 +19,7 @@
             </div>
             <div class="p-3 d-flex flex-column h-100">
               <div class="card-chip-title">
-                <h2 class="mb-0"><%= link_to(event.name, event_path(event), class: "event-link") %></h2>
+                <h3 class="mb-0"><%= link_to(event.name, event_path(event), class: "event-link") %></h3>
               </div>
               <div class="d-flex flex-column justify-content-between h-100">
                 <div class="card-chip-description">
