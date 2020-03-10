@@ -54,7 +54,9 @@
       </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Log in", user_session_path, class: "nav-link" %>
+          <div class="hover-underline">
+            <%= link_to "Log in", user_session_path, class: "nav-link hover hover-1" %>
+          </div>
         </li>
       <% end %>
     </ul>
