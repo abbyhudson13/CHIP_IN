@@ -14,6 +14,7 @@
         <li >
             <%= link_to dashboard_path do %>
              <div>
+                <p><%= current_user.notifications %></p>
                 <i class="far fa-envelope blink no-bullet-points"></i>
             </div>
             <% end %>
