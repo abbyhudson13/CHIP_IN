@@ -9,19 +9,18 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-        <!-- attempt to show the notification -->
-      <% if current_user.notifications > 0 %>
-        <li >
+      <% if current_user %>
+        <% if current_user.notifications > 0 %>
+          <li >
             <%= link_to dashboard_path do %>
-             <div>
+              <div>
                 <p><%= current_user.notifications %></p>
                 <i class="far fa-envelope blink no-bullet-points"></i>
-            </div>
+              </div>
             <% end %>
-          <% else   %>
+          </li>
         <% end  %>
-        </li>
-      <!-- attempt to show the notification -->
+      <% end %>
 
       <% if current_user %>
         <li class="nav-item">
