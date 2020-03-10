@@ -12,16 +12,17 @@
 </head>
 <body>
   <div class="content">
+    <% if (params[:controller] == 'pages' && params[:action] == "dashboard")  %>
+      <% current_user.notifications = 0%>
+      <% current_user.save %>
+    <% end %>
     <%= render "shared/navbar" %>
    <%= render "shared/flashes" %>
     <%= yield %>
     <div class="push"></div>
   </div>
     <%= render "shared/footer" %>
-    <% if (params[:controller] = 'pages' && params[:action] = "dashboard")  %>
-      <% current_user.notifications = 0%>
-      <% current_user.save %>
-    <% end %>
+
   <%= javascript_include_tag 'application' %>
   <%= javascript_pack_tag 'application' %>
 </body>
