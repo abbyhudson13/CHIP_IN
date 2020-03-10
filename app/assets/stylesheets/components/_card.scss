@@ -22,17 +22,19 @@
   text-align: left;
 }
 
-.card-chip h2 a{
-  color:#856c8b;
-}
+// WE DON'T NEED THIS CODE ANYMORE
+// .card-chip h2 a{
+//   // color:#856c8b;
+// }
 
 .card-chip p{
   color: #7D7D7D;
 }
 
-.card-chip p a{
-  color: #7D7D7D;
-}
+// WE DON'T NEED THIS CODE ANYMORE
+// .card-chip p a{
+//   color: #7D7D7D;
+// }
 
 .card-chip-image{
   background-color: white;
@@ -41,18 +43,15 @@
   padding-bottom: 10px;
 }
 
-.event-content {
-  color: black;
-}
-
- .event-content a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-  &:hover{
-    color: #bfadc4;
-    }
-  }
+// WE DON'T NEED THIS CODE ANYMORE
+ // .event-content a {
+ //    text-decoration: none;
+ //    font-weight: bold;
+ //    // color: #7D7D7D;
+ //  // &:hover{
+ //  //   color: #bfadc4;
+ //  //   }
+ //  }
 
 .chip-purple{
   color: $chip-purple;
