@@ -7,8 +7,8 @@
           <div class="hr-style"><hr></div>
           <h1><%= @user.username %></h1>
           <h6><%= @user.full_name %></h6>
-          <p><%= link_to "Go to #{@user.username}'s Website", @user.webpage , target: "_blank", rel: "nofollow"  %></p>
-          <p><%= mail_to @user.email, "Email #{@user.username}" %></p>
+          <p><%= link_to "Go to #{@user.username}'s Website", @user.webpage , target: "_blank", rel: "nofollow", class: "event-link"  %></p>
+          <p><%= mail_to @user.email, "Email #{@user.username}", class: "event-link" %></p>
         </div>
       </div>
 
@@ -21,7 +21,7 @@
             <h4>Other events hosted by <%= @user.username %>:</h4>
             <ul class="no-bullet-points">
               <% @user.events.each do |event|%>
-                <li><%= link_to(event.name, event_path(event), class: "event-link") %></li>
+                <li><%= link_to(event.name, event_path(event), class: "event-link", target: "_blank") %></li>
               <% end %>
             </ul>
           </div>
