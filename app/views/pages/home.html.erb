@@ -32,8 +32,7 @@
                     <div class="d-flex flex-column justify-content-between h-100">
                       <div class="card-chip-description">
                         <p>Host: <%= link_to(event.user.username, user_path(event.user), class: "user-link", target: :_blank) %></p>
-                        <p>Cause: <%= event.category %></p>
-                        <p>Date: <%= event.starts_at_formatted %> to <%= event.ends_at_time %></p>
+                        <p><%= event.starts_at_formatted %> to <%= event.ends_at_time %></p>
                       </div>
                       <div class="card-chip-spots">
                         <p class="mb-0 p-1"><%= event.capacity - event.requests.length %> spots left</p>
@@ -50,34 +49,53 @@
   </div>
 </section>
 
-<section class="section" id="section-two">
-  <div class="container py-5">
+<section class="section d-flex flex-column" id="section-two">
+  <h1 class="py-5">How it works</h1>
+  <div class="container">
     <div class="row">
-      <div class="d-flex">
-        <div class="mission-card">
-          <div class="col-lg-2">
-            <h4>Find the perfect Opportunity</h4>
-            <p>Whether you want something nearby, </p>
+      <div class="d-flex justify-content-between">
+        <div class="col-lg-2 mission-card">
+          <div class="d-flex flex-column text-center">
+            <%= cl_image_tag("https://res.cloudinary.com/dqlvehu5z/image/upload/v1583857847/find_pzmo01.jpg",
+              crop: :fill) %>
+            <div class="mission-text">
+              <h4>Find the perfect opportunity</h4>
+              <p>We make it easy to volunteer at a time or location that works for you</p>
+            </div>
           </div>
         </div>
-        <div class="col-lg-2">Send your request online</div>
-        <div class="col-lg-2">Join our network of volunteers</div>
-        <div class="col-lg-2">Have experiences you won't forget</div>
-      </div>
+        <div class="col-lg-2 mission-card">
+          <div class="d-flex flex-column text-center">
+            <%= cl_image_tag("https://res.cloudinary.com/dqlvehu5z/image/upload/v1583858272/phone_hc2rp2.jpg",
+              crop: :fill) %>
+            <div class="mission-text">
+              <h4>Send your request online</h4>
+              <p>Whether at home or on the go, you contact charities directly. Zero bureaucracy!</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 mission-card">
+          <div class="d-flex flex-column text-center">
+            <%= cl_image_tag("https://res.cloudinary.com/dqlvehu5z/image/upload/v1583859172/community_vzbxsw.jpg",
+            crop: :fill) %>
+            <div class="mission-text">
+              <h4>Join our network of volunteers</h4>
+              <p>Meet and connect with like-minded individuals in your area.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 mission-card">
+          <div class="d-flex flex-column text-center">
+            <%= cl_image_tag("https://res.cloudinary.com/dqlvehu5z/image/upload/v1583860195/memories2_xtavyo.jpg",
+            crop: :fill) %>
+            <div class="mission-text">
+            <h4>Have experiences you won't forget</h4>
+            <p>Help others in your city while making memories</p>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="container py-5">
-    <h2>Section Three</h2>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
-  </div>
-</section>
+
