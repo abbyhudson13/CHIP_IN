@@ -1,0 +1,26 @@
+.event-link {
+  color: $chip-purple;
+  text-decoration: none;
+  font-weight: bold;
+  transition-duration: 0.2s;
+  &:hover {
+    color: $chip-purple-light;
+    text-decoration: none;
+  }
+}
+
+.user-link {
+  color: $chip-grey-text;
+  text-decoration: none;
+  font-weight: bold;
+  transition-duration: 0.2s;
+  &:hover {
+    color: $chip-purple-light;
+    text-decoration: none;
+  }
+}
+
+.no-bullet-points {
+  list-style-type: none;
+  padding-left: 0;
+}

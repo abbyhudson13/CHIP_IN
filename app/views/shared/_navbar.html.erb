@@ -7,9 +7,21 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+      <% if current_user %>
+        <% if current_user.notifications > 0 %>
+          <li >
+            <%= link_to dashboard_path do %>
+              <div>
+                <p><%= current_user.notifications %></p>
+                <i class="far fa-envelope blink no-bullet-points"></i>
+              </div>
+            <% end %>
+          </li>
+        <% end  %>
+      <% end %>
+
       <% if current_user %>
         <li class="nav-item">
           <div class="hover-underline">
@@ -42,7 +54,9 @@
       </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Log in", user_session_path, class: "nav-link" %>
+          <div class="hover-underline">
+            <%= link_to "Log in", user_session_path, class: "nav-link hover hover-1" %>
+          </div>
         </li>
       <% end %>
     </ul>

@@ -22,22 +22,14 @@
   text-align: left;
 }
 
-.card-chip a{
-  color:#856c8b;
-  text-decoration: none;
-  font-weight: bold;
-      &:hover{
-    color: #bfadc4;
-    }
-}
-
 .card-chip p{
   color: #7D7D7D;
 }
 
-.card-chip p a{
-  color: #7D7D7D;
-}
+// WE DON'T NEED THIS CODE ANYMORE
+// .card-chip p a{
+//   color: #7D7D7D;
+// }
 
 .card-chip-image{
   background-color: white;
@@ -45,7 +37,6 @@
   border-top-right-radius: 5px;
   padding-bottom: 10px;
 }
-
 .chip-purple{
   color: $chip-purple;
 }

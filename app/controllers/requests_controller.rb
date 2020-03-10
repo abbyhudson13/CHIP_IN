@@ -26,7 +26,9 @@ class RequestsController < ApplicationController
     @request = Request.find(params[:id])
     @request.status = params[:request][:status].to_i
     @request.update!(request_params)
+    user_update
     redirect_to event_path(@event)
+    #added for the user notification
   end
 
 
@@ -39,6 +41,14 @@ class RequestsController < ApplicationController
 
   def confirmation
   end
+
+  def user_update
+    other_user = @request.user
+    other_user.notifications += 1
+    other_user.save
+
+  end
+
 
   private
 
