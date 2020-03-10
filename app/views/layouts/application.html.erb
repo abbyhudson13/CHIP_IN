@@ -18,7 +18,7 @@
     <div class="push"></div>
   </div>
     <%= render "shared/footer" %>
-    <% if (params[:controller] = 'pages' && params[:action] = "dashboard")  %>
+    <% if (params[:controller] == 'pages' && params[:action] == "dashboard")  %>
       <% current_user.notifications = 0%>
       <% current_user.save %>
     <% end %>
