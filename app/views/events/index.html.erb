@@ -23,10 +23,53 @@
               </div>
               <div class="d-flex flex-column justify-content-between h-100">
                 <div class="card-chip-description">
-                  <p>Host: <%= link_to(event.user.username, user_path(event.user), class: "user-link", target: :_blank) %></p>
+                  <p>Host: <%= link_to(event.user.username, user_path(event.user)) %></p>
+                  <a href="#" data-toggle="modal" data-target="#modal-<%= event.user.id %>">
+                  <%= event.user.username %>
+                  </a>
                   <p>Cause: <%= event.category %></p>
                   <p>Date: <%= event.starts_at_formatted%> to <%= event.ends_at_time %></p>
                 </div>
+
+
+                  <div class="modal fade" id="modal-<%=event.user.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel"><%= event.user.username%>'s profile</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <p>Contact person: <%=event.user.full_name %></p>
+                          <%= cl_image_tag(event.user.photo.key, id: "modal-photo", class: "mb-5") %>
+                          <p><%= event.user.bio  %></p>
+                          <p><%= link_to "Go to #{event.user.username}'s Website", event.user.webpage , target: "_blank", rel: "nofollow"  %></p>
+                          <p><%= link_to "View full profile", user_path(event.user) %></p>
+
+                        </div>
+                          <h5 class="m-3">Reviews:</h5>
+                          <% event.user.reviews_as_reviewee.each do |review| %>
+                            <div class="ml-3">
+                              <% review.rating.times do %>
+                                <i class="fas fa-star" style="color: #EDB867"></i>
+                              <% end %>
+                              <% (5 - review.rating).times do %>
+                                <i class="far fa-star" style="color: #EDB867"></i>
+                              <% end %>
+                              <p><em>"<%= review.content %>"</em></p>
+                            </div>
+                          <% end %>
+                        <div class="modal-footer">
+                          <button type="button" class="button-chip-secondary" data-dismiss="modal">Close</button>
+                          <button type="button" class="button-chip-main">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
                 <div class="card-chip-spots">
                   <p class="mb-0 p-1"><%= event.capacity - event.requests.length %> spots left</p>
                 </div>
@@ -45,12 +88,11 @@
     </div>
     <% end %>
   </div>
-
-
   <div id="map" class="w-50"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 
 </div>
+
 
