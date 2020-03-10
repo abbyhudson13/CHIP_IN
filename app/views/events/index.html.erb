@@ -23,9 +23,8 @@
               </div>
               <div class="d-flex flex-column justify-content-between h-100">
                 <div class="card-chip-description">
-                  <p>Host: <%= link_to(event.user.username, user_path(event.user)) %></p>
                   <a href="#" data-toggle="modal" data-target="#modal-<%= event.user.id %>">
-                  <%= event.user.username %>
+                  <p>Host: <%= event.user.username %></p>
                   </a>
                   <p>Cause: <%= event.category %></p>
                   <p>Date: <%= event.starts_at_formatted%> to <%= event.ends_at_time %></p>
