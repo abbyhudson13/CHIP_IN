@@ -3,39 +3,37 @@
     <div class="border-bottom d-flex align-items-center justify-content-between p-4">
       <div class="d-flex align-items-center justify-content-between">
         <%= cl_image_tag @event.user.photo.key, width: "70px", class: "mr-2" %>
-        <h5><%= link_to(@event.user.username, user_path(@event.user), class: "user-link") %></h5>
+        <h5 class="m-0 p-0"><%= link_to(@event.user.username, user_path(@event.user), class: "user-link") %></h5>
       </div>
-      <p><span><%= @event.capacity - @event.requests.length %></span> spots left!</p>
+      <p class="m-0 p-0"><span class="m-2"><%= @event.capacity - @event.requests.length %></span> spots left!</p>
     </div>
     <div class="row">
       <div class="image-container col-lg-4 col-sm-12">
           <%= cl_image_tag @event.photo.key, width: "300px" %>
       </div>
       <div class="col-lg-8 col-sm-12 py-8">
-        <div>
-          <div class="p-4">
-            <h3 class=""><%= @event.name %></h3>
-            <p><%= @event.description %></p>
-            <div class="address-margin d-flex align-items-center justify-content-start">
-              <i class="fas fa-map-marker-alt mr-2"></i>
-              <p><%= @event.address %></p>
-            </div>
-            <% if @event.requests.present? %>
-              <div class="participants-number d-flex align-items-center justify-content-start p-2">
-                <% @event.requests.sample(2).each do |request|%>
-                  <%= cl_image_tag request.user.photo.key, class: "avatar", title: request.user.username%>
-                <% end %>
-                <% if @event.requests.length > 2 %>
-                  <div class="ml-2">
-                    <p> + <%= @event.requests.length - 2 %> more </p>
-                  </div>
-                <% end %>
-              </div>
-            <% end %>
-            <p><strong>From:</strong> <%= @event.starts_at_formatted %></p>
-            <p><strong>To:</strong> <%= @event.ends_at_formatted %></p>
-            <%= link_to "Participate", new_event_request_path(@event), class: 'button-chip-main' %>
+        <div class="p-4">
+          <h3 class="mb-3"><%= @event.name %></h3>
+          <p><%= @event.description %></p>
+          <div class="d-flex align-items-center justify-content-start mb-3">
+            <i class="fas fa-map-marker-alt mr-2"></i>
+            <p class="m-0"><%= @event.address %></p>
           </div>
+          <% if @event.requests.present? %>
+            <div class="d-flex align-items-center justify-content-start mb-3">
+              <% @event.requests.sample(2).each do |request|%>
+                <%= cl_image_tag request.user.photo.key, class: "avatar", id: "avatar-participant", title: request.user.username%>
+              <% end %>
+              <% if @event.requests.length > 2 %>
+                <div class="ml-2">
+                  <p class="m-0"> + <%= @event.requests.length - 2 %> more </p>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+          <p><strong>From:</strong> <%= @event.starts_at_formatted %></p>
+          <p><strong>To:</strong> <%= @event.ends_at_formatted %></p>
+          <%= link_to "Participate", new_event_request_path(@event), class: 'button-chip-main' %>
         </div>
       </div>
     </div>
@@ -48,6 +46,7 @@
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   ></div>
+
 </div>
 
 
