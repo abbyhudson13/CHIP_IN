@@ -14,8 +14,10 @@
           <li >
             <%= link_to dashboard_path do %>
               <div>
-                <p><%= current_user.notifications %></p>
-                <i class="far fa-envelope blink no-bullet-points"></i>
+                <button type="button" class="btn brn-primary">
+                Notification <span class="badge badge-danger"><%= current_user.notifications %></span>
+              </button>
+                <!-- <i class="far fa-envelope blink no-bullet-points"></i> -->
               </div>
             <% end %>
           </li>
