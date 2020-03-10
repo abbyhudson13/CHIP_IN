@@ -7,9 +7,21 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+        <!-- attempt to show the notification -->
+      <% if current_user.notifications > 0 %>
+        <li >
+            <%= link_to dashboard_path do %>
+             <div>
+                <i class="far fa-envelope blink no-bullet-points"></i>
+            </div>
+            <% end %>
+          <% else   %>
+        <% end  %>
+        </li>
+      <!-- attempt to show the notification -->
+
       <% if current_user %>
         <li class="nav-item">
           <div class="hover-underline">
