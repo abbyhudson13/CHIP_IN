@@ -5,7 +5,12 @@
         <%= cl_image_tag @event.user.photo.key, width: "70px", class: "mr-2" %>
         <h5 class="m-0 p-0"><%= link_to(@event.user.username, user_path(@event.user), class: "user-link") %></h5>
       </div>
-      <p class="m-0 p-0"><span class="spots-left-circle"><%= @event.capacity - @event.requests.length %></span> spots left!</p>
+      <div class="m-0 p-0 d-flex align-items-center">
+        <div class="spots-left-circle color-secondary d-flex align-items-center justify-content-center">
+          <strong><%= @event.capacity - @event.requests.length %></strong>
+        </div>
+        <div class="color-secondary">spots left!</div>
+      </div>
     </div>
     <div class="row">
       <div class="image-container col-lg-4 col-sm-12">
@@ -14,7 +19,7 @@
       <div class="col-lg-8 col-sm-12 py-8">
         <div class="p-4">
           <h3 class="mb-3"><%= @event.name %></h3>
-          <p><%= @event.description %></p>
+          <p class="color-tertiary"><%= @event.description %></p>
           <div class="d-flex align-items-center justify-content-start mb-3">
             <i class="fas fa-map-marker-alt mr-2"></i>
             <p class="m-0"><%= @event.address %></p>
@@ -26,7 +31,7 @@
               <% end %>
               <% if @event.requests.length > 2 %>
                 <div class="ml-2">
-                  <p class="m-0"> + <%= @event.requests.length - 2 %> more </p>
+                  <p class="color-tertiary m-0"> + <%= @event.requests.length - 2 %> more </p>
                 </div>
               <% end %>
             </div>
