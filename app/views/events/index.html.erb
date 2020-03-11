@@ -16,16 +16,19 @@
           <div class="event-content d-flex flex-column h-100">
             <div class="card-chip-image">
               <%= cl_image_tag event.photo.key, class: "mb-0" %>
+              <div class="card-chip-spots">
+                <p class="mb-0 p-1 text-center"><div class="spots-left-card"><span class="spots-left-circle text-dark m-2"><%= event.capacity - event.requests.length %></span> spots left</div></p>
+              </div>
             </div>
-            <div class="p-3 d-flex flex-column h-100">
-              <div class="card-chip-title">
+            <div class="pl-3 pb-3 pr-3 d-flex flex-column h-100">
+              <div class="card-chip-title text-center">
                 <h3 class="mb-0"><%= link_to(event.name, event_path(event), class: "event-link") %></h3>
               </div>
               <div class="d-flex flex-column justify-content-between h-100">
                 <div class="card-chip-description">
-                  <p><%= event.starts_at_formatted%> to <%= event.ends_at_time %></p>
+                  <p><i class="fas fa-calendar-times mr-3"></i>   <%= event.starts_at_formatted%> to <%= event.ends_at_time %></p>
                   <a href="#" data-toggle="modal" data-target="#modal-<%= event.user.id %>">
-                  <p>Host: <%= event.user.username %></p>
+                  <p><i class="fas fa-user-friends mr-3"></i><i class="fas fa-caret-right"></i> <strong><%= event.user.username %></strong></p>
                   </a>
                 </div>
                   <div class="modal fade" id="modal-<%=event.user.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -62,9 +65,6 @@
                       </div>
                     </div>
                   </div>
-                <div class="card-chip-spots">
-                  <p class="mb-0 p-1"><%= event.capacity - event.requests.length %> spots left</p>
-                </div>
               </div>
             </div>
           </div>
