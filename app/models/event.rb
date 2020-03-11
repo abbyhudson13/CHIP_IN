@@ -9,14 +9,14 @@ class Event < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   def starts_at_formatted
-    starts_at.strftime('%a, %d %b %l:%M %p')
+    starts_at.strftime('%a, %d %b %l:%M %P')
   end
 
   def ends_at_formatted
-    ends_at.strftime('%a, %d %b %l:%M %p')
+    ends_at.strftime('%a, %d %b %l:%M %P')
   end
 
   def ends_at_time
-    ends_at.strftime('%l:%M %p')
+    ends_at.strftime('%l:%M %P')
   end
 end
