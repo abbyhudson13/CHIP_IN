@@ -8,9 +8,6 @@
   .color-tertiary {
     color: $tertiary-spanish-gray;
   }
-  .color-secondary {
-    color: $secondary-granite-gray;
-  }
   .border-bottom {
     border-bottom: 1px solid rgba(0, 0, 0, 0.2) !important;
   }
@@ -22,6 +19,10 @@
     color: $secondary-granite-gray;
   }
 }
+
+.color-secondary {
+    color: $secondary-granite-gray;
+  }
 
 #show-page-content{
     margin-bottom: 50px;

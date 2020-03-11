@@ -10,8 +10,14 @@
 // }
 
 
-.card-chip-title{
+.card-chip-title {
   min-height: 80px;
+  a {
+    color: $chip-purple;
+    &:hover {
+      color: $chip-purple-light;
+    }
+  }
 }
 
 .card-chip {
@@ -23,9 +29,9 @@
   text-align: left;
 }
 
-.card-chip p{
-  color: #7D7D7D;
-}
+// .card-chip p{
+//   color: #7D7D7D;
+// }
 
 .card-chip-image{
   background-color: white;

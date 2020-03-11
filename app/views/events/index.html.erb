@@ -29,8 +29,8 @@
               </div>
               <div class="d-flex flex-column justify-content-between">
                 <div class="card-chip-description">
-                  <p><i class="fas fa-calendar-times mr-3"></i>   <%= event.starts_at_formatted%> to <%= event.ends_at_time %></p>
-                  <a href="#" data-toggle="modal" data-target="#modal-<%= event.user.id %>">
+                  <p class="color-secondary"><i class="fas fa-calendar-times mr-3"></i>   <%= event.starts_at_formatted%> to <%= event.ends_at_time %></p>
+                  <a class="user-link" href="#" data-toggle="modal" data-target="#modal-<%= event.user.id %>">
                   <p><i class="fas fa-user-friends mr-3"></i><i class="fas fa-caret-right"></i> <strong><%= event.user.username %></strong></p>
                   </a>
                 </div>
@@ -47,8 +47,8 @@
                           <p>Contact person: <%=event.user.full_name %></p>
                           <%= cl_image_tag(event.user.photo.key, id: "modal-photo", class: "mb-5") %>
                           <p><%= event.user.bio  %></p>
-                          <p><%= link_to "Go to #{event.user.username}'s Website", event.user.webpage , target: "_blank", rel: "nofollow"  %></p>
-                          <p><%= link_to "View full profile", user_path(event.user) %></p>
+                          <p><%= link_to "Go to #{event.user.username}'s Website", event.user.webpage , target: "_blank", rel: "nofollow", class: "user-link"  %></p>
+                          <p><%= link_to "View full profile", user_path(event.user), class: "user-link" %></p>
                         </div>
                           <h5 class="m-3">Reviews:</h5>
                           <% event.user.reviews_as_reviewee.each do |review| %>
