@@ -52,29 +52,29 @@
 <section class="section d-flex flex-column" id="section-two">
   <h1 class="py-5">How it works</h1>
   <div class="container">
-    <div class="row">
-      <div class="d-flex justify-content-between">
-        <div class="col-lg-2 mission-card">
+    <div class="row justify-content-center w-100">
+        <div class="mission-cards d-flex justify-content-between w-100">
+        <div class="col-lg-2 col-md-4 col-sm-6 mission-card">
           <div class="d-flex flex-column text-center">
             <%= cl_image_tag("https://res.cloudinary.com/dqlvehu5z/image/upload/v1583857847/find_pzmo01.jpg",
               crop: :fill) %>
             <div class="mission-text">
               <h4>Find the perfect opportunity</h4>
-              <p>We make it easy to volunteer at a time or location that works for you</p>
+              <p>We make it easy to volunteer at a time or location that works for you.</p>
             </div>
           </div>
         </div>
-        <div class="col-lg-2 mission-card">
+        <div class="col-lg-2 col-md-4 col-sm-6 mission-card">
           <div class="d-flex flex-column text-center">
             <%= cl_image_tag("https://res.cloudinary.com/dqlvehu5z/image/upload/v1583858272/phone_hc2rp2.jpg",
               crop: :fill) %>
             <div class="mission-text">
               <h4>Send your request online</h4>
-              <p>Whether at home or on the go, you contact charities directly. Zero bureaucracy!</p>
+              <p>Whether at home or on the go, you contact charities directly.</p>
             </div>
           </div>
         </div>
-        <div class="col-lg-2 mission-card">
+        <div class="col-lg-2 col-md-4 col-sm-6 mission-card">
           <div class="d-flex flex-column text-center">
             <%= cl_image_tag("https://res.cloudinary.com/dqlvehu5z/image/upload/v1583859172/community_vzbxsw.jpg",
             crop: :fill) %>
@@ -84,16 +84,17 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-2 mission-card">
+        <div class="col-lg-2 col-md-4 col-sm-6 mission-card">
           <div class="d-flex flex-column text-center">
             <%= cl_image_tag("https://res.cloudinary.com/dqlvehu5z/image/upload/v1583860195/memories2_xtavyo.jpg",
             crop: :fill) %>
             <div class="mission-text">
             <h4>Have experiences you won't forget</h4>
-            <p>Help others in your city while making memories</p>
+            <p>Help others in your city while making memories.</p>
             </div>
           </div>
         </div>
+      </div>
     </div>
   </div>
 </section>
