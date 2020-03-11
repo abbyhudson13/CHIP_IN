@@ -5,7 +5,7 @@
         <%= cl_image_tag @event.user.photo.key, width: "70px", class: "mr-2" %>
         <h5 class="m-0 p-0"><%= link_to(@event.user.username, user_path(@event.user), class: "user-link") %></h5>
       </div>
-      <p class="m-0 p-0"><span class="m-2"><%= @event.capacity - @event.requests.length %></span> spots left!</p>
+      <p class="m-0 p-0"><span class="spots-left-circle"><%= @event.capacity - @event.requests.length %></span> spots left!</p>
     </div>
     <div class="row">
       <div class="image-container col-lg-4 col-sm-12">
