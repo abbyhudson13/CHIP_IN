@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
   def home
-    @events = Event.all
+    @events = Event.select do |event|
+      event.starts_at >= Date.today
+    end
   end
 
   def dashboard
