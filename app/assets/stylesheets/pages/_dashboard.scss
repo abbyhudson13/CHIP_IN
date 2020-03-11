@@ -26,11 +26,11 @@
   color: black;
 }
 
-.nav-pills .nav-link.active{ 
+.nav-pills .nav-link.active{
   background-color: transparent !important;
-  // text-decoration: underline;
   color: $primary-dark-charcoal !important;
-  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.2);
+  border-color: #EBEBEB !important;
+  border-bottom: 2px solid;
 }
 
 .nav-pills .nav-link{
