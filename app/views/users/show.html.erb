@@ -37,7 +37,7 @@
                   <i class="far fa-star" style="color: #EDB867"></i>
                 <% end %>
                 <p>Reviewed by: <%= link_to(review.reviewer.full_name, user_path(review.reviewer), class: "user-link") %></p>
-                <p><em>"<%= review.content %>"</em></p>
+                <p><em>"<%= review.message %>"</em></p>
               </div>
             <% end %>
           </div>
