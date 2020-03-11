@@ -13,7 +13,10 @@ class EventsController < ApplicationController
       "
       @events = Event.where(sql, query: "%#{params[:search][:query]}%").geocoded
       @events = @events.where(category: params[:search][:category]).geocoded if params[:search][:category].present?
+    end
 
+    @events_today = @events.select do |event|
+      event.starts_at >= Date.today
     end
 
     @markers = @events.map do |event|
