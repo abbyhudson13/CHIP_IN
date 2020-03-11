@@ -82,7 +82,7 @@
                     <div class="d-flex flex-column justify-content-between">
                       <div class="card-chip-description">
                         <p class="color-secondary"><i class="fas fa-calendar-times mr-3"></i>   <%= event.starts_at_formatted%> to <%= event.ends_at_time %></p>
-                        <p class="user-link"><i class="fas fa-user-friends mr-3"></i><i class="fas fa-caret-right"></i> <strong><%= event.user.username %></strong></p>
+                        <p id="host-icons"><i class="fas fa-user-friends mr-3"></i><i class="fas fa-caret-right"></i> <strong><%= link_to(event.user.username, user_path(event.user), class: "user-link") %></strong></p>
                       </div>
                     </div>
                   </div>
