@@ -4,7 +4,7 @@
   margin-top: 50px;
   border: 1px solid #e4e4e4;
   border-radius: 10px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 #show-page-content{
@@ -16,16 +16,15 @@
   height: 100%;
   object-fit: cover;
   border-bottom-left-radius: 10px;
-  // border-bottom-right-radius: 5px;
-  // border-top-right-radius: 5px;
-  // TO DECIDE for the better option
+  border-bottom-right-radius: 2px;
+  border-top-right-radius: 2px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .border-bottom {
   border-bottom: 1px solid #e4e4e4;
   img {
     border-radius: 2.8rem;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -39,4 +38,5 @@
   border-radius: 50%;
   margin: 5px;
 }
+
 
