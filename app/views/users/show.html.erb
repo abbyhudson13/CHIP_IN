@@ -7,15 +7,21 @@
           <div class="hr-style"><hr></div>
           <h1><%= @user.username %></h1>
           <h6><%= @user.full_name %></h6>
-          <p><%= link_to "Go to #{@user.username}'s Website", @user.webpage , target: "_blank", rel: "nofollow", class: "event-link"  %></p>
-          <p><%= mail_to @user.email, "Email #{@user.username}", class: "event-link" %></p>
+          <div class="">
+            <div class="row d-flex justify-content-center">
+            <p><%= link_to "Website", @user.webpage , target: "_blank", rel: "nofollow", class: "event-link link-profile"  %></p>
+          </div>
+          <div class="row d-flex justify-content-center">
+            <p><%= mail_to @user.email, "Contact", class: "event-link link-profile" %></p>
+          </div>
+          </div>
         </div>
       </div>
 
       <div class="col-lg-8 col-sm-12">
         <div class="second-half">
           <div class="user-details">
-            <h1 class="d-flex justify-content-center"><%= @user.username%>'s Profile</h1>
+            <!-- <h1 class="d-flex justify-content-center"><%= @user.username%>'s Profile</h1> -->
             <h3>About:</h3>
             <p><%= @user.bio %></p>
             <h4>Other events hosted by <%= @user.username %>:</h4>
@@ -31,13 +37,15 @@
             <% @user.reviews_as_reviewee.each do |review| %>
               <div>
                 <% review.rating.times do %>
-                  <i class="fas fa-star" style="color: #EDB867"></i>
-                <% end %>
-                <% (5 - review.rating).times do %>
-                  <i class="far fa-star" style="color: #EDB867"></i>
-                <% end %>
-                <p>Reviewed by: <%= link_to(review.reviewer.full_name, user_path(review.reviewer), class: "user-link") %></p>
-                <p><em>"<%= review.message %>"</em></p>
+                <div class="review-box">
+                    <i class="fas fa-star" style="color: #EDB867"></i>
+                  <% end %>
+                  <% (5 - review.rating).times do %>
+                    <i class="far fa-star" style="color: #EDB867"></i>
+                  <% end %>
+                  <p>Reviewed by: <%= link_to(review.reviewer.full_name, user_path(review.reviewer), class: "user-link") %></p>
+                  <p><em>"<%= review.message %>"</em></p>
+                </div>
               </div>
             <% end %>
           </div>

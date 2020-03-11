@@ -51,6 +51,55 @@
   height: 40px;
 }
 
+
+.link-profile {
+  border: 1px solid #c7c7c7;
+  display: flex;
+  max-width: 76%;
+  margin: 5px auto auto auto; 
+  padding: 10px 150px;
+  justify-content: space-around;
+}
+
+.review-box{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  margin-top: 20px
+}
+
+img.profile-img{
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.user-details p{
+  color: $secondary-granite-gray;
+  margin-top: 20px;
+}
+
+.first-half h1{
+  color: $primary-dark-charcoal;
+  margin: 0px 0px 15px 15px;
+}
+
+.first-half h6 {
+  color: $secondary-granite-gray;
+  margin: 0px 0px 15px 15px;
+}
+
+.second-half h4{
+  margin-top: 7px;
+  margin-bottom: 16px;
+  color: $primary-dark-charcoal
+}
+
+.second-half {
+  margin-left: 20px;
+}
+
+.second-half li{
+  margin-top: 7px;
+}
+
 .charity-wrapper {
   width: 60px;
   height: 60px;
@@ -62,6 +111,7 @@
   align-items: center;
   overflow: hidden;
 }
+
 
 
 
