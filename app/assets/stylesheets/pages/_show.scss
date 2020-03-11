@@ -23,11 +23,6 @@
 
 .border-bottom {
   border-bottom: 1px solid #e4e4e4;
-  span {
-    background-color: #FFEB99;
-    padding: 10px;
-    border-radius: 50%;
-  }
   img {
     border-radius: 2.8rem;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -36,5 +31,12 @@
 
 #avatar-participant {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.spots-left-circle {
+  background-color: #FFEB99;
+  padding: 10px;
+  border-radius: 50%;
+  margin: 5px;
 }
 
