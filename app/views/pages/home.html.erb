@@ -70,11 +70,13 @@
             <div class="col-lg-3 col-sm-12 p-0 m-4">
               <div class="card-chip">
                 <div class="event-content d-flex flex-column">
-                  <div class="card-chip-image mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.2)),url(<%= cl_image_path event.photo.key %>)">
-                    <div class="card-chip-spots">
-                      <p class="mb-0 p-1 text-center"><div class="spots-left-card d-flex align-items-center"><div class="spots-left-circle d-flex align-items-center justify-content-center text-dark m-2"><%= event.capacity - event.requests.length %></div> spots left</div></p>
+                  <%= link_to event_path(event) do %>
+                    <div class="card-chip-image mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.2)),url(<%= cl_image_path event.photo.key %>)">
+                      <div class="card-chip-spots">
+                        <p class="mb-0 p-1 text-center"><div class="spots-left-card d-flex align-items-center"><div class="spots-left-circle d-flex align-items-center justify-content-center text-dark m-2"><%= event.capacity - event.requests.length %></div> spots left</div></p>
+                      </div>
                     </div>
-                  </div>
+                  <% end %>
                   <div class="pl-3 pb-3 pr-3 d-flex flex-column">
                     <div class="card-chip-title text-center">
                       <h3 class="mb-0"><%= link_to(event.name, event_path(event), class: "event-link") %></h3>
