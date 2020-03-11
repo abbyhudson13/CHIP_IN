@@ -27,12 +27,12 @@
                           <p>Date: <%= event.starts_at_formatted %></p>
                         </div>
                         <div class="card-chip-spots">
-                          <p class="<%=if request.status == "pending"
+                          <p class=" text-center <%=if request.status == "pending"
                            "pending-button"
                            elsif request.status == "confirmed"
                             "confirmed-button"
                           elsif request.status =="declined"
-                            "declined-button"
+                            "declined-button color white"
                           else "cancelled-button"
                             end %>"><%= request.status %></p>
                         </div>
