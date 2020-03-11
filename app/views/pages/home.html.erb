@@ -12,43 +12,7 @@
   </div>
 </section>
 
-<section class="section">
-  <div class="container py-5">
-    <h2 class="chip-purple">Featured events</h2>
-    <div class="">
-      <div class="row h-100 justify-content-center">
-        <% @events.sample(3).each do |event| %>
-          <% if event.starts_at > Date.today %>
-            <div class="col-lg-3 col-sm-12 p-0 m-4">
-              <div class="card-chip">
-                <div class="event-content d-flex flex-column h-100">
-                  <div class="card-chip-image mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.2)),url(<%= cl_image_path event.photo.key %>)">
-                    <div class="card-chip-spots">
-                      <p class="mb-0 p-1 text-center"><div class="spots-left-card"><span class="spots-left-circle text-dark m-2"><%= event.capacity - event.requests.length %></span> spots left</div></p>
-                    </div>
-                  </div>
-                  <div class="pl-3 pb-3 pr-3 d-flex flex-column">
-                    <div class="card-chip-title text-center">
-                      <h3 class="mb-0"><%= link_to(event.name, event_path(event), class: "event-link") %></h3>
-                    </div>
-                    <div class="d-flex flex-column justify-content-between">
-                      <div class="card-chip-description">
-                        <p><i class="fas fa-calendar-times mr-3"></i>   <%= event.starts_at_formatted%> to <%= event.ends_at_time %></p>
-                        <p><i class="fas fa-user-friends mr-3"></i><i class="fas fa-caret-right"></i> <strong> <%= link_to(event.user.username, user_path(event.user), class: "user-link", target: :_blank) %></strong></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="section-two">
+<section class="section" id="section-one">
   <h1 class="py-5">How it works</h1>
   <div class="container">
     <div class="row">
@@ -91,6 +55,42 @@
             <p>Help others in your city while making memories.</p>
             </div>
           </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="section-two">
+   <div class="container py-5">
+    <h2 class="chip-purple">Featured events</h2>
+    <div class="">
+      <div class="row h-100 justify-content-center">
+        <% @events.sample(3).each do |event| %>
+          <% if event.starts_at > Date.today %>
+            <div class="col-lg-3 col-sm-12 p-0 m-4">
+              <div class="card-chip">
+                <div class="event-content d-flex flex-column h-100">
+                  <div class="card-chip-image mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.2)),url(<%= cl_image_path event.photo.key %>)">
+                    <div class="card-chip-spots">
+                      <p class="mb-0 p-1 text-center"><div class="spots-left-card"><span class="spots-left-circle text-dark m-2"><%= event.capacity - event.requests.length %></span> spots left</div></p>
+                    </div>
+                  </div>
+                  <div class="pl-3 pb-3 pr-3 d-flex flex-column">
+                    <div class="card-chip-title text-center">
+                      <h3 class="mb-0"><%= link_to(event.name, event_path(event), class: "event-link") %></h3>
+                    </div>
+                    <div class="d-flex flex-column justify-content-between">
+                      <div class="card-chip-description">
+                        <p><i class="fas fa-calendar-times mr-3"></i>   <%= event.starts_at_formatted%> to <%= event.ends_at_time %></p>
+                        <p><i class="fas fa-user-friends mr-3"></i><i class="fas fa-caret-right"></i> <strong> <%= link_to(event.user.username, user_path(event.user), class: "user-link", target: :_blank) %></strong></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>
