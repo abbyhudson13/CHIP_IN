@@ -10,9 +10,8 @@
 }
 
 .user-link {
-  color: $chip-grey-text;
+  color: $chip-purple;
   text-decoration: none;
-  font-weight: bold;
   transition-duration: 0.2s;
   &:hover {
     color: $chip-purple-light;
