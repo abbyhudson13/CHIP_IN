@@ -25,3 +25,18 @@
   background-color: #A9A9A9;
   color: black;
 }
+
+.nav-pills .nav-link.active{ 
+  background-color: transparent !important;
+  // text-decoration: underline;
+  color: $primary-dark-charcoal !important;
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.2);
+}
+
+.nav-pills .nav-link{
+  color: $tertiary-spanish-gray !important;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 5px;
+}
+
