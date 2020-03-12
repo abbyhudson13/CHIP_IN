@@ -9,10 +9,10 @@
           <h6><%= @user.full_name %></h6>
           <div class="">
             <div class="row d-flex justify-content-center">
-            <p><%= link_to "Website", @user.webpage , target: "_blank", rel: "nofollow", class: "event-link link-profile"  %></p>
+            <p><%= link_to "Website", @user.webpage , target: "_blank", rel: "nofollow", class: "user-link link-profile"  %></p>
           </div>
           <div class="row d-flex justify-content-center">
-            <p><%= mail_to @user.email, "Contact", class: "event-link link-profile" %></p>
+            <p><%= mail_to @user.email, "Contact", class: "user-link link-profile" %></p>
           </div>
           </div>
         </div>
@@ -27,7 +27,7 @@
             <h4>Other events hosted by <%= @user.username %>:</h4>
             <ul class="no-bullet-points">
               <% @user.events.each do |event|%>
-                <li><%= link_to(event.name, event_path(event), class: "event-link", target: "_blank") %></li>
+                <li><i class="fas fa-caret-right" style="color:#856c8b"></i> <%= link_to(event.name, event_path(event), class: "event-link", target: "_blank") %></li>
               <% end %>
             </ul>
           </div>
