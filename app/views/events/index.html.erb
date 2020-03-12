@@ -32,7 +32,7 @@
                 <div class="card-chip-description">
                   <p class="color-secondary"><i class="fas fa-calendar-times mr-3"></i>   <%= event.starts_at_formatted%> to <%= event.ends_at_time %></p>
                   <a class="user-link" href="#" data-toggle="modal" data-target="#modal-<%= event.user.id %>">
-                  <p><i class="fas fa-user-friends mr-3"></i><i class="fas fa-caret-right"></i> <strong><%= event.user.username %></strong></p>
+                  <p><i class="fas fa-user-friends mr-3"></i><i class="fas fa-caret-right"></i> <strong class="in-card-link"><%= event.user.username %></strong></p>
                   </a>
                 </div>
                   <div class="modal fade" id="modal-<%=event.user.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
