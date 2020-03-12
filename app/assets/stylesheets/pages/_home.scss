@@ -36,13 +36,24 @@
 
 #section-two {
     background-image: linear-gradient(-225deg, rgba(133, 108, 139, 0.5), rgba(133, 108, 139, 0.5)), url('https://res.cloudinary.com/dqlvehu5z/image/upload/v1583920050/pexels-photo-697243_pn7wbg.jpg');
-    color: white;
 }
 
+#section-one p{
+  color: $tertiary-spanish-gray
+}
 #section-one{
   color: $secondary-granite-gray;
 }
 
 #host-icons {
   color: $secondary-granite-gray;
+}
+
+
+#first-header{
+  color: $primary-dark-charcoal;
+}
+
+#second-header{
+  color: white;
 }
