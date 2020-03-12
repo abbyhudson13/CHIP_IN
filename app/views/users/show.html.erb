@@ -5,14 +5,16 @@
         <div class="first-half">
           <p class="row d-flex justify-content-center"><%= cl_image_tag @user.photo.key, :class => 'profile-img' %></p>
           <div class="hr-style"><hr></div>
-          <h1><%= @user.username %></h1>
-          <h6><%= @user.full_name %></h6>
+          <div class="text-center">
+            <h2><%= @user.username %></h2>
+            <h6><strong>Responsible:</strong> <%= @user.full_name %></h6>
+          </div>
           <div class="">
             <div class="row d-flex justify-content-center">
-            <p><%= link_to "Website", @user.webpage , target: "_blank", rel: "nofollow", class: "user-link link-profile"  %></p>
+            <%= link_to "Website", @user.webpage , target: "_blank", rel: "nofollow", class: "link-profile btn btn-light mb-2"  %>
           </div>
           <div class="row d-flex justify-content-center">
-            <p><%= mail_to @user.email, "Contact", class: "user-link link-profile" %></p>
+            <%= mail_to @user.email, "Contact", class: "link-profile btn btn-light mb-3" %>
           </div>
           </div>
         </div>
@@ -21,29 +23,33 @@
       <div class="col-lg-8 col-sm-12">
         <div class="second-half">
           <div class="user-details">
-            <!-- <h1 class="d-flex justify-content-center"><%= @user.username%>'s Profile</h1> -->
-            <h3>About:</h3>
-            <p><%= @user.bio %></p>
-            <h4>Other events hosted by <%= @user.username %>:</h4>
-            <ul class="no-bullet-points">
-              <% @user.events.each do |event|%>
-                <li><i class="fas fa-caret-right" style="color:#856c8b"></i> <%= link_to(event.name, event_path(event), class: "event-link", target: "_blank") %></li>
-              <% end %>
-            </ul>
+            <div class="p-3">
+              <h3>About</h3>
+              <p><%= @user.bio %></p>
+            </div>
+            <hr>
+            <div class="my-3 p-3">
+              <h4>Events</h4>
+              <ul class="no-bullet-points">
+                <% @user.events.each do |event|%>
+                  <li><i class="fas fa-caret-right" style="color:#856c8b"></i> <%= link_to(event.name, event_path(event), class: "event-link ml-2", target: "_blank") %></li>
+                <% end %>
+              </ul>
+            </div>
           </div>
           <hr>
-          <div class="">
-            <h3>Reviews:</h1>
+          <div class="p-3">
+            <h4>Reviews</h1>
             <% @user.reviews_as_reviewee.each do |review| %>
               <div class="review-box">
                 <% review.rating.times do %>
-                    <i class="fas fa-star" style="color: #EDB867"></i>
+                    <i class="fas fa-star" style="color: #fbd94c"></i>
                 <% end %>
                 <% (5 - review.rating).times do %>
-                  <i class="far fa-star" style="color: #EDB867"></i>
+                  <i class="far fa-star" style="color: #fbd94c"></i>
                 <% end %>
                 <p><%= link_to(review.reviewer.full_name, user_path(review.reviewer), class: "user-link") %></p>
-                <p><%= review.message %></p>
+                <p class="color-tertiary"><em><%= review.message %></em></p>
               </div>
             <% end %>
           </div>
