@@ -49,12 +49,13 @@
                           <p>Contact person: <%=event.user.full_name %></p>
                           <%= cl_image_tag(event.user.photo.key, id: "modal-photo", class: "mb-5") %>
                           <p><%= event.user.bio  %></p>
-                          <p><%= link_to "Go to #{event.user.username}'s Website", event.user.webpage , target: "_blank", rel: "nofollow", class: "user-link"  %></p>
-                          <p><%= link_to "View full profile", user_path(event.user), class: "user-link" %></p>
+                          <p><i class="fas fa-globe mr-3"></i><i class="fas fa-caret-right"></i><%= link_to " #{event.user.username}'s Website", event.user.webpage , target: "_blank", rel: "nofollow", class: "user-link"  %></p>
+                          <p><i class="fas fa-user-friends mr-3"></i><i class="fas fa-caret-right"></i><%= link_to " View full profile", user_path(event.user), class: "user-link" %></p>
                         </div>
+                        <div class="modal-reviews">
                           <h5 class="m-3">Reviews:</h5>
                           <% event.user.reviews_as_reviewee.each do |review| %>
-                            <div class="ml-3">
+                            <div class="review ml-3">
                               <% review.rating.times do %>
                                 <i class="fas fa-star" style="color: #EDB867"></i>
                               <% end %>
@@ -64,6 +65,7 @@
                               <p><em>"<%= review.message %>"</em></p>
                             </div>
                           <% end %>
+                        </div>
                         <div class="modal-footer">
                           <button type="button" class="button-chip-secondary" data-dismiss="modal">Close</button>
                         </div>
