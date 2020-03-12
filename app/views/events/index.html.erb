@@ -47,10 +47,23 @@
                         </div>
                         <div class="modal-body">
                           <p>Contact person: <%=event.user.full_name %></p>
-                          <%= cl_image_tag(event.user.photo.key, id: "modal-photo", class: "mb-5") %>
-                          <p><%= event.user.bio  %></p>
-                          <p><i class="fas fa-globe mr-3"></i><i class="fas fa-caret-right"></i><%= link_to " #{event.user.username}'s Website", event.user.webpage , target: "_blank", rel: "nofollow", class: "user-link"  %></p>
-                          <p><i class="fas fa-user-friends mr-3"></i><i class="fas fa-caret-right"></i><%= link_to " View full profile", user_path(event.user), class: "user-link" %></p>
+                          <div class="d-flex justify-content-around p-3">
+                            <%= cl_image_tag(event.user.photo.key, id: "modal-photo", class: "mb-3") %>
+                            <p class="p-3"><%= event.user.bio %></p>
+                          </div>
+                          <div class="d-flex">
+                            <div>
+                              <p><i class="fas fa-globe mr-3"></i><i class="fas fa-caret-right"></i><%= link_to " #{event.user.username}'s Website", event.user.webpage , target: "_blank", rel: "nofollow", class: "user-link ml-1"  %></p>
+                                <ul class="no-bullet-points mt-5">
+                                  <% event.user.events.each do |event|%>
+                                    <% if event.starts_at > Date.today %>
+                                      <li><i class="fas fa-calendar-times mr-3"></i><i class="fas fa-caret-right ml-1" style="color:#856c8b"></i> <%= link_to(event.name, event_path(event), class: "event-link ml-1", target: "_blank") %><p class="ml-5"><%= event.starts_at_formatted %> to <%= event.ends_at_time %></p></li>
+                                    <% end %>
+                                  <% end %>
+                                </ul>
+                                </div>
+                            <p><i class="fas fa-user-friends ml-3 mr-3"></i><i class="fas fa-caret-right"></i><%= link_to " View full profile", user_path(event.user), class: "user-link ml-1" %></p>
+                          </div>
                         </div>
                         <div class="modal-reviews">
                           <h5 class="m-3">Reviews:</h5>
