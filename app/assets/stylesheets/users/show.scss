@@ -13,14 +13,13 @@
 }
 
 img.profile-img{
-    margin-top: 15px;
-    margin-bottom: 15px;
-    background-position: center;
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    // position: absolute;
-    // clip: rect(0px,60px,200px,0px);
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background-position: center;
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
 }
 
 .hr-style{
@@ -31,4 +30,8 @@ img.profile-img{
 #modal-photo {
   max-width: 50%;
   background-position: center;
+}
+
+.review-box {
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
 }
