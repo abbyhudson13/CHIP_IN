@@ -9,7 +9,7 @@
 
 #request_message{
     height: 200px;
-    width: 600px;
+    // width: 600px;
 }
 
 .form-buttons{
@@ -19,9 +19,20 @@
 }
 
 .back-btn{
-
 }
 
 h5 {
   color: $tertiary-spanish-gray;
+}
+
+@media (min-width: 100px) and (max-width: 575px) {
+    #request_message {
+        width: 350px;
+    }
+}
+
+@media (min-width: 576px) {
+    #request_message {
+        width: 600px;
+    }
 }
