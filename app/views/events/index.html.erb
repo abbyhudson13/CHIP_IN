@@ -1,5 +1,5 @@
 <div class="d-flex">
-  <div class="container w-50">
+  <div class="container" id="indexcontainer">
 
       <%= simple_form_for :search, url: events_path, method: "GET" do |f| %>
         <div class="d-flex justify-content-center align-items-center form-inline" id="category-form">
@@ -11,11 +11,10 @@
             <%= f.hidden_field :query, value: "#{params[:search][:query]}" if params[:search].present? %>
             <%= f.submit "Search", class: "button-chip-main" %>
         </div>
-
     <div class="row">
       <% @events.each do |event| %>
       <% if event.starts_at > Date.today %>
-      <div class="m-4 col-xl-5 col-lg-11 p-0 text-center">
+      <div class="m-4 col-xl-5 col-lg-11 col-md-6 col-sm-12 p-0 text-center">
         <div class="card-chip">
           <div class="event-content d-flex flex-column">
             <%= link_to event_path(event) do %>
