@@ -1,13 +1,13 @@
 .event-link {
-  color: $secondary-granite-gray;
+  color: $chip-purple;
   text-decoration: none;
   transition-duration: 0.2s;
   &:hover {
-    color: $extra-chinese-gray;
+    color: $chip-purple-light;
     text-decoration: none;
   }
 }
-// .event-link and .user-link are identical now. We can create one class for both of them then and replace the old classes with a new once everywhere.
+
 .user-link {
   color: $secondary-granite-gray;
   text-decoration: none;
