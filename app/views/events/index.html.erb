@@ -9,7 +9,7 @@
           <%= f.input :category, label: "Cause", collection: Event::CATEGORIES %>
           <% end %>
             <%= f.hidden_field :query, value: "#{params[:search][:query]}" if params[:search].present? %>
-            <%= f.submit "Submit", class: "button-chip-main" %>
+            <%= f.submit "Search", class: "button-chip-main" %>
         </div>
 
     <div class="row">
