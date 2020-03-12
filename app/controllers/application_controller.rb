@@ -12,5 +12,7 @@ class ApplicationController < ActionController::Base
   def reset_notifications
     current_user.notifications = 0
   end
-
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
 end
