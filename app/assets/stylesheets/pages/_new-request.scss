@@ -1,25 +1,20 @@
 .new-request{
-    min-height: 75vh;
+  min-height: 75vh;
 }
 
-.request-text{
-    margin-top: 50px;
-    margin-bottom: 25px;
+.request-text {
+  margin-bottom: 25px;
 }
 
 #request_message{
-    height: 200px;
-    width: 600px;
+  height: 200px;
+  width: 600px;
 }
 
 .form-buttons{
-    min-width: 150px;
-    margin: 0px $spacer;
-    margin-top: 10px;
-}
-
-.back-btn{
-
+  min-width: 150px;
+  margin: 0px $spacer;
+  margin-top: 10px;
 }
 
 h5 {
