@@ -1,15 +1,12 @@
 .first-half{
-    border: 1px solid #e4e4e4;
-    border-radius: 1px;
-    min-height: 450px;
-    padding: 10px;
-}
-
-.second-half{
-}
-
-.user-details{
-    margin-bottom: 50px;
+  border: 1px solid #e4e4e4;
+  border-radius: 1px;
+  min-height: 450px;
+  padding: 10px;
+  margin-bottom: 20px;
+  h6 {
+    margin: 0px 0px 16px;
+  }
 }
 
 img.profile-img{
@@ -35,3 +32,8 @@ img.profile-img{
 .review-box {
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
 }
+
+.second-half h3 {
+  color: $primary-dark-charcoal;
+}
+
