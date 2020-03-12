@@ -10,3 +10,16 @@
   text-align: center;
 
 }
+
+
+@media (min-width: 100px) and (max-width: 575px) {
+    #review_message {
+        width: 350px;
+    }
+}
+
+@media (min-width: 576px) {
+    #review_message {
+        width: 600px;
+    }
+}
