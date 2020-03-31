@@ -1,4 +1,5 @@
 class RequestsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_event, only: [:new, :create, :edit, :update]
 
   def new
