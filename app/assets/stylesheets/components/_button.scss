@@ -1,4 +1,23 @@
-.button-chip-main  {
+.button-chip-main {
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  font-weight: 400;
+  padding: 10px 20px;
+  background: #262626;
+  color: #000000;
+  background-color: $chip-main;
+  font-size: 15px;
+  border-radius: 2.8rem;
+  min-width: 150px;
+  text-align: center;
+  height: 42px;
+  border: none;
+  outline: none;
+  transition-duration: 0.3s;
+  margin-bottom: 1rem;
+  &:hover {
+    opacity: 0.8;
     cursor: pointer;
     display: inline-block;
     border: 0;
@@ -9,58 +28,40 @@
     background-color: $chip-main;
     font-size: 15px;
     border-radius: 2.8rem;
+    text-decoration: none;
     min-width: 150px;
     text-align: center;
-    height: 42px;
-    border: none;
-    outline:none;
-    transition-duration: 0.3s;
-    &:hover {
-        opacity: 0.8;
-        cursor: pointer;
-        display: inline-block;
-        border: 0;
-        font-weight: 400;
-        padding: 10px 20px;
-        background: #262626;
-        color: #000000;
-        background-color: $chip-main;
-        font-size: 15px;
-        border-radius: 2.8rem;
-        text-decoration: none;
-        min-width: 150px;
-        text-align: center;
-    }
+  }
 }
 
-.button-chip-secondary  {
+.button-chip-secondary {
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  font-weight: 400;
+  padding: 10px 20px;
+  color: #000000;
+  background-color: #d4ebd0;
+  font-size: 15px;
+  border-radius: 2.8rem;
+  min-width: 150px;
+  text-align: center;
+  border: none;
+  outline: none;
+  transition-duration: 0.3s;
+  &:hover {
+    opacity: 0.9;
     cursor: pointer;
     display: inline-block;
     border: 0;
     font-weight: 400;
     padding: 10px 20px;
     color: #000000;
-    background-color: #D4EBD0;
+    background-color: #d4ebd0;
     font-size: 15px;
     border-radius: 2.8rem;
+    text-decoration: none;
     min-width: 150px;
     text-align: center;
-    border: none;
-    outline:none;
-    transition-duration: 0.3s;
-    &:hover {
-        opacity: 0.9;
-        cursor: pointer;
-        display: inline-block;
-        border: 0;
-        font-weight: 400;
-        padding: 10px 20px;
-        color: #000000;
-        background-color: #D4EBD0;
-        font-size: 15px;
-        border-radius: 2.8rem;
-        text-decoration: none;
-        min-width: 150px;
-        text-align: center;
-    }
+  }
 }

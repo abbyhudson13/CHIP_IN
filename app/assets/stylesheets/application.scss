@@ -1,23 +1,24 @@
 // Graphical variables
-@import "config/fonts";
-@import "config/colors";
-@import "config/bootstrap_variables";
+@import 'config/fonts';
+@import 'config/colors';
+@import 'config/bootstrap_variables';
 
 // External libraries
-@import "bootstrap/scss/bootstrap";
-@import "font-awesome-sprockets";
-@import "font-awesome";
+@import 'bootstrap/scss/bootstrap';
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
 
 // Your CSS partials
-@import "components/index";
-@import "pages/index";
-@import "users/show";
-@import "components/card";
-@import "components/button";
-@import "components/footer";
-@import "devise/devise";
+@import 'components/index';
+@import 'pages/index';
+@import 'users/show';
+@import 'components/card';
+@import 'components/button';
+@import 'components/footer';
+@import 'devise/devise';
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   background-color: white;
@@ -27,9 +28,10 @@ html, body {
   min-height: 100%;
   margin-bottom: -100px;
 }
+container {
+  margin-top: 2rem;
+}
 
 .push {
   height: 100px;
 }
-
-
